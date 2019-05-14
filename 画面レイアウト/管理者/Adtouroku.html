@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>管理者映画登録</title>
+<link rel="stylesheet" href="css/Ad.css">
+
+</head>
+
+<body>
+<div class="header">
+<div class="Adname">○○さん&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a href="Adlogin.html">ログアウト</a></div>
+</div>
+
+<h1 class="touroku">映画登録</h1>
+<table>
+ <tr>
+  <td>映画名</td>
+  <td><input type="text" style="height: 26px"></td>
+ </tr>
+ <tr>
+  <td>ジャンル</td>
+  <td>
+     <select name="janru">
+     <option value="1">ホラー</option>
+     <option value="2">恋愛</option>
+     <option value="3">アクション</option>
+     <option value="4">ギャグ・コメディ</option>
+     <option value="5">SF</option>
+     <option value="6">ミステリー</option>
+     <option value="7">R18</option>
+     </select>
+  </td>
+ </tr>
+ <tr>
+  <td>キャスト</td>
+  <td><input type="text" style="height: 26px"></td>
+ </tr>
+ <tr>
+  <td>概要</td>
+  <td><textarea name="naiyou" rows="5" cols="14"></textarea></td>
+ </tr>
+</table>
+
+<div class="backbtn">
+  <input type="submit" onclick="location.href='Adtop.html'"  value="戻る" class="back">
+  <input type="submit" onclick="location.href='Adtourokucheck.html'" value="確認" class="kettei">
+</div>
+
+</body>
+
+</html>
