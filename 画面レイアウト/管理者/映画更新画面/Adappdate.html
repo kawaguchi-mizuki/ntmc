@@ -8,7 +8,12 @@
 </head>
 
 <body>
-<h1 class="koushin">映画更新</h1>
+<div class="header">
+<div class="Adname">○○さん&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
+<a href="../ログイン画面/Adlogin.html">ログアウト</a></div>
+</div>
+
+<h1 class="common">映画更新</h1>
 <table>
 <tr>
 <td>
@@ -20,11 +25,11 @@
 
 <table>
 <tr>
-  <td style="width: 164px">映画名</td>
+  <td class="koumoku">映画名</td>
   <td>エゴマゲドン</td>
  </tr>
  <tr>
-  <td style="width: 164px">ジャンル</td>
+  <td class="koumoku">ジャンル</td>
   <td>
      <select name="janru">
      <option value="1">ホラー</option>
@@ -38,19 +43,18 @@
   </td>
  </tr>
  <tr>
-  <td style="width: 164px">キャスト</td>
+  <td class="koumoku">キャスト</td>
   <td>江越伊織、吉川希大</td>
  </tr>
  <tr>
-  <td style="width: 164px">概要</td>
+  <td class="koumoku">概要</td>
   <td>大魔王エゴブリン襲来から早5年
   　　　<br>新たな脅威が地球にせまっていた。
   </td>
  </tr>
 </table>
-<p class="thisdelete">この作品を削除しますか？</p>
 <br><input type="submit" onclick="location.href='../トップ画面/Adtop.html'" value="戻る" class="back">
-<input type="submit" onclick="location.href='../映画削除画面/Addelete.html'" value="削除" class="delete">
+<input type="submit" onclick="location.href='../映画更新確認画面/Adappdatecheck.html'" value="確認" class="check">
 </body>
 
 </html>
