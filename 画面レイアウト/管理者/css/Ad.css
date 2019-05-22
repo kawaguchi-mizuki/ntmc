@@ -15,7 +15,9 @@
 	margin-left:40px;
 }
 
-
+.finish{
+	text-align:center;
+}
 
 h1{
 	text-align:center;
@@ -25,6 +27,19 @@ h1.touroku{
 	color:red;
 	text-shadow: 3px 4px 3px #A4C6FF;
 }
+
+h1.common{
+	color:red;
+	text-shadow: 3px 4px 3px #A4C6FF;
+	font-size:40px;
+
+}
+
+p.complete{
+	font-size:40px;
+    text-align:center;
+}
+
 #t_btn{
 	text-align:right;
 }
@@ -41,14 +56,28 @@ button.touroku{
 table{
 	margin-left:auto;
 	margin-right:auto;
-	
-	
+}
+table.delcheck{
+	border-collapse: collapse;
 }
 
 td{
 	font-size:30px;
-
 }
+
+td.koumoku{
+	width:164px;
+}
+
+td.deletemove{
+	width:250px;
+}
+
+select.janru{
+	width:200px;
+	height:500px;
+}
+
 
 button.login{
 	text-align:center;
@@ -81,8 +110,27 @@ input.back{
 	margin-left:400px;
 }
 
+input.check{
+	font-size:25px;
+	margin-left:550px;
+}
 
 input.kettei{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.delete{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.update{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.touroku{
 	font-size:25px;
 	margin-left:550px;
 }
@@ -131,5 +179,26 @@ input.mvs{
 	border-radius:15px;
     background-color:#99CCFF;
     text-shadow: -4px -4px 1px white;
+}
+
+input.inmove{
+	height:40px;
+	width:200px;
+}
+
+input.kensaku{
+	height:50px;
+	width:70px;
+}
+
+p.messagecheck{
+	text-align:center;
+	color:red;
+	font-size:20px;
+}
+input.topback{
+      text-align:center;
+	font-size:30px;
+	width:350px;
 }
 
