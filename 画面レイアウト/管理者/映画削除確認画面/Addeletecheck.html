@@ -3,7 +3,7 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>管理者映画更新</title>
+<title>管理者映画削除確認</title>
 <link rel="stylesheet" href="../css/Ad.css">
 </head>
 
@@ -13,15 +13,9 @@
 <a href="../ログイン画面/Adlogin.html">ログアウト</a></div>
 </div>
 
-<h1 class="common">映画更新</h1>
-<table>
-<tr>
-<td>
-<input type="text" placeholder="映画名を入力" class="inmove">
-</td>
-<td><input type="submit" value="検索" class="kensaku"></td>
-</tr>
-</table>
+<h1 class="common">映画削除確認</h1>
+
+
 
 <table>
 <tr>
@@ -30,17 +24,7 @@
  </tr>
  <tr>
   <td class="koumoku">ジャンル</td>
-  <td>
-     <select name="janru">
-     <option value="1">ホラー</option>
-     <option value="2">恋愛</option>
-     <option value="3">アクション</option>
-     <option value="4">ギャグ・コメディ</option>
-     <option value="5">SF</option>
-     <option value="6">ミステリー</option>
-     <option value="7">R18</option>
-     </select>
-  </td>
+  <td>R18</td>
  </tr>
  <tr>
   <td class="koumoku">キャスト</td>
@@ -53,8 +37,11 @@
   </td>
  </tr>
 </table>
+<p class="messagecheck">この作品を削除しますか？</p>
 <br><input type="submit" onclick="location.href='../トップ画面/Adtop.html'" value="戻る" class="back">
-<input type="submit" onclick="location.href='../映画更新確認画面/Adappdatecheck.html'" value="確認" class="check">
+<input type="submit" onclick="location.href='../映画削除完了画面/Addeletefinish.html'" value="削除" class="delete">
+
+
 </body>
 
 </html>
