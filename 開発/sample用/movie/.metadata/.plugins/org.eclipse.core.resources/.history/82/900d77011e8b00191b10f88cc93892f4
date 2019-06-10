@@ -1,7 +1,0 @@
-package movie.beans;
-
-import org.graalvm.compiler.code.DataSection.SerializableData;
-
-public class UserInfoBeans extends SerializableData {
-
-}

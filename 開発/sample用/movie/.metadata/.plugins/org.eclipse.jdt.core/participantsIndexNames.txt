@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Eclipse\pleiades\workspace\movie\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2468085673.index
-\movie\src
