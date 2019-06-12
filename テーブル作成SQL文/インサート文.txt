@@ -1,0 +1,7 @@
+
+//連番を初期化
+ALTER TABLE user auto_increment = 1;
+
+
+//ユーザーテーブル
+insert into user(user_mail,user_name,user_sex,user_birthday,user_password) value("1701126@st.asojuku.ac.jp","江越伊織","不明","1998-11-05","iori1105");
