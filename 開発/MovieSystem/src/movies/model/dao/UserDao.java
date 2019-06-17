@@ -1,5 +1,11 @@
 package movies.model.dao;
 
-public class UserDao {
+import movies.beans.UserInfoBeans;
 
+public class UserDao extends DaoBase{
+
+	public UserInfoBeans getUser(String mail, String password) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }
