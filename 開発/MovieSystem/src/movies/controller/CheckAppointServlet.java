@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import movies.beans.AppointBeans;
 import movies.model.MovieModel;
 
 @WebServlet("checkAppoint")
@@ -35,11 +34,11 @@ public class CheckAppointServlet extends HttpServlet {
 
 		int userId = (int)session.getAttribute("");
 		MovieModel movieModel = new MovieModel();
-		AppointBeans appointBeans = movieModel.appointMovie(userId,newMovieId,newMovieFee,movieDate
-				                                           ,movieTime,movieSeat,movieTheater,movieScreen);
+		movieModel.appointMovie(userId,newMovieId,newMovieFee,movieDate
+				                ,movieTime,movieSeat,movieTheater,movieScreen);
 
 		//画面遷移//
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/loginStart.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/checkAppointComp.jsp");
 		dispatcher.forward(request,response);
 	}
 }

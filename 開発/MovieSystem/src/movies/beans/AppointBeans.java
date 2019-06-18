@@ -1,16 +1,26 @@
 package movies.beans;
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class AppointBeans {
+	private int userId;
 	private int movieId;
-	private String movieName;
-	private String movieGenre;
-	private String movieCast;
-	private String movieSummary;
-	private int adminId;
-	private Date movieStartDate;
-	private Date movieEndDate;
+	private int movieFee;
+	private Date movieDate;
+	private String movieSeat;
+	private Time movieTime;
+	private String movieTheater;
+	private String movieScreen;
+
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
 	public int getMovieId() {
 		return movieId;
@@ -20,60 +30,52 @@ public class AppointBeans {
 		this.movieId = movieId;
 	}
 
-	public String getMovieName() {
-		return movieName;
+	public int getMovieFee() {
+		return movieFee;
 	}
 
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
+	public void setMovieFee(int movieFee) {
+		this.movieFee = movieFee;
 	}
 
-	public String getMovieGenre() {
-		return movieGenre;
+	public Date getMovieDate() {
+		return movieDate;
 	}
 
-	public void setMovieGenre(String movieGenre) {
-		this.movieGenre = movieGenre;
+	public void setMovieDate(Date movieStartDate) {
+		this.movieDate = movieStartDate;
 	}
 
-	public String getMovieCast() {
-		return movieCast;
+	public String getMovieSeat() {
+		return movieSeat;
 	}
 
-	public void setMovieCast(String movieCast) {
-		this.movieCast = movieCast;
+	public void setMovieSeat(String movieSeat) {
+		this.movieSeat = movieSeat;
 	}
 
-	public String getMovieSummary() {
-		return movieSummary;
+	public Time getMovieTime() {
+		return movieTime;
 	}
 
-	public void setMovieSummary(String movieSummary) {
-		this.movieSummary = movieSummary;
+	public void setMovieTime(Time movieTime) {
+		this.movieTime = movieTime;
 	}
 
-	public int getAdminId() {
-		return adminId;
+	public String getMovieTheater() {
+		return movieTheater;
 	}
 
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
+	public void setMovieTheater(String movieTheater) {
+		this.movieTheater = movieTheater;
 	}
 
-	public Date getMovieStartDate() {
-		return movieStartDate;
+	public String getMovieScreen() {
+		return movieScreen;
 	}
 
-	public void setMovieStartDate(Date movieStartDate) {
-		this.movieStartDate = movieStartDate;
-	}
-
-	public Date getMovieEndDate() {
-		return movieEndDate;
-	}
-
-	public void setMovieEndDate(Date movieEndDate) {
-		this.movieEndDate = movieEndDate;
+	public void setMovieScreen(String movieScreen) {
+		this.movieScreen = movieScreen;
 	}
 
 

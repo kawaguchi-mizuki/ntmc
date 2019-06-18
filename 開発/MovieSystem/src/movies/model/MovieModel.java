@@ -8,15 +8,23 @@ import movies.model.dao.MovieDao;
 
 public class MovieModel {
 
-	public AppointBeans appointMovie(int userId,int movieId,int movieFee,Date movieDate,Time movieTime,
+	public void appointMovie(int userId,int movieId,int movieFee,Date movieDate,Time movieTime,
 									 String movieSeat,String movieTheater,String movieScreen) {
-		//インスタンス生成//
-		AppointBeans appoint = new AppointBeans();
+		//Beansに格納//
+		AppointBeans appointBeans = new AppointBeans();
+		appointBeans.setUserId(userId);
+		appointBeans.setMovieId(movieId);
+		appointBeans.setMovieFee(movieFee);
+		appointBeans.setMovieDate(movieDate);
+		appointBeans.setMovieTime(movieTime);
+		appointBeans.setMovieSeat(movieSeat);
+		appointBeans.setMovieTheater(movieTheater);
+		appointBeans.setMovieScreen(movieScreen);
+
 		MovieDao movieDao = new MovieDao();
 		try {
 		 movieDao.connect();
-		 appoint = movieDao.setAppoint(userId,movieId,movieFee,movieDate,movieSeat,
-				                      movieTime,movieTheater,movieScreen);
+		 movieDao.setAppoint(appointBeans);
 		} catch(Exception e) {
 		//エラーを出力画面に表示する//
 		e.printStackTrace();
@@ -26,7 +34,7 @@ public class MovieModel {
 		movieDao.close();
 			}
 		}
-		return appoint;
+		return;
 	}
 
 }
