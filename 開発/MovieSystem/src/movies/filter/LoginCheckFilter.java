@@ -64,7 +64,7 @@ public class LoginCheckFilter implements Filter {
 		}
 
 		//ログイン情報をセッションに保存//
-		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("loginInfo");
+		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("userInfo");
 
 		if( userInfo == null ) {
 			//ログイン画面へ転送//

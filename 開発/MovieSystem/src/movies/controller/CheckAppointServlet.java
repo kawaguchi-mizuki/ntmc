@@ -17,7 +17,13 @@ import movies.model.MovieModel;
 @WebServlet("checkAppoint")
 public class CheckAppointServlet extends HttpServlet {
 
-	@Override
+	/*Overrideとは
+	  クラスを継承する時に、スーパークラスのメソッドを
+	  サブクラスにおいて同じメソッド名で定義し直すこと。
+	  オーバーライドする際は、メソッド名だけでなく、
+	  引数も同じ数、同じ順番にする必要がある。
+	  今回はHttoServletクラスのメソッドをオーバーライドしている。*/
+	//オーバーライド//
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 		HttpSession session = request.getSession();
