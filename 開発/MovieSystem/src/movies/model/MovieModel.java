@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 import movies.beans.AppointBeans;
-import movies.model.dao.MovieDao;
+import movies.model.dao.AppointDao;
 
 public class MovieModel {
 
@@ -21,17 +21,17 @@ public class MovieModel {
 		appointBeans.setMovieTheater(movieTheater);
 		appointBeans.setMovieScreen(movieScreen);
 
-		MovieDao movieDao = new MovieDao();
+		AppointDao appointDao = new AppointDao();
 		try {
-		 movieDao.connect();
-		 movieDao.setAppoint(appointBeans);
+		 appointDao.connect();
+		 appointDao.setAppoint(appointBeans);
 		} catch(Exception e) {
 		//エラーを出力画面に表示する//
 		e.printStackTrace();
 		} finally{
 		//接続を切る//
-		if(movieDao != null) {
-		movieDao.close();
+		if(appointDao != null) {
+		appointDao.close();
 			}
 		}
 		return;
