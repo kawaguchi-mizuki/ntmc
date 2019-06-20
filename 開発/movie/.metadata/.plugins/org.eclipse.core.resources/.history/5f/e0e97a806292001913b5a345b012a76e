@@ -1,0 +1,140 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/user_add.css" rel="stylesheet" type="text/css">
+<title>会員登録</title>
+</head>
+<body>
+	<h1>新規登録</h1>
+	<a href="login" class="btn-square-slant"
+		style="position: absolute; left: 0px; top: 0px">戻る</a>
+	<form action="user" method="POST">
+		<table align="center">
+			<tr>
+				<th>メールアドレス</th>
+				<td><input type="text" name="mail"><select name="addr"
+					id="addr"></select></td>
+			</tr>
+			<tr>
+				<th>名前</th>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<th>性別</th>
+				<td><input type="radio" name="sex" value="男" checked="checked">男<input
+					type="radio" name="sex" value="女">女</td>
+			</tr>
+			<tr>
+				<th>生年月日</th>
+				<td><select name="year" id=""> //1960 2019
+				</select> <select name="month" id="">
+				</select> <select name="day" id="">
+				</select></td>
+			</tr>
+			<tr>
+				<th>パスワード</th>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<th>パスワード再入力</th>
+				<td><input type="password" name="r-password"></td>
+			</tr>
+		</table>
+		<%
+			String errflg = request.getParameter("errflg");
+		%>
+		<%
+			if (errflg != null && errflg.equals("1")) {
+		%>
+		<p>空白があります！</p>
+		<%
+			} else if (errflg != null && errflg.equals("2")) {
+		%>
+		<p>パスワードは同じ文字をいれてください！</p>
+		<%
+			}
+		%>
+		<input type="submit" value="登録">
+
+	</form>
+	<form class="cmxform" action="user" method="POST">
+		<fieldset>
+			<legend>新規会員登録</legend>
+			<ol>
+				<li><label for="address">メールアドレス<em>*</em></label> <input
+					id="mail" name="mail" /></li>
+				<li><label for="name">名前<em>*</em></label> <input id="name"
+					name="name" /></li>
+				<li><label for="sex">性別<em>*</em></label> <input type="radio"
+					name="sex" value="男" checked="checked">男<input type="radio"
+					name="sex" value="女">女</li>
+				<li><label for="dob">生年月日 <span class="sr">(年)</span> <em>*</em></label>
+				<select id="year" name="yaer">
+					</select> <label for="month" class="sr">生年月日（月)
+					<em>*</em>
+			</label> <select id="month" name="month"><option value="1">Jan</option>
+					<option value="2">Feb</option></select> <label for="dob-y" class="sr">生年月日
+					(日) <em>*</em>
+			</label> <select id="day" name=2day"><option value="1979">1979</option>
+					<option value="1980">1980</option></select></li>
+				</li>
+				<li><label for="county">国<em>*</em></label> <input id="county" />
+				</li>
+				<li><label for="postcode">郵便番号<em>*</em></label> <input
+					id="postcode" /></li>
+				<li><label for="sex">性別 <em>*</em></label> <select id="sex"><option
+							value="female">女</option>
+						<option value="male">男</option></select></li>
+			</ol>
+		</fieldset>
+		<p>
+			<input type="submit" value="登録" />
+		</p>
+	</form>
+
+</body>
+
+<script>
+	//optionタグ量産
+	const year = document.getElementById('year')
+	const month = document.getElementById('month')
+	const day = document.getElementById('day')
+	for (let i = 1960; i <= 2019; i++) {
+		const optionTag = document.createElement("option")
+		year.appendChild(optionTag)
+		dispatchOption(optionTag, i)
+	}
+	for (let i = 1; i <= 12; i++) {
+		const optionTag = document.createElement("option")
+		month.appendChild(optionTag)
+		dispatchOption(optionTag, i)
+	}
+	for (let i = 1; i < 31; i++) {
+		const optionTag = document.createElement("option")
+		day.appendChild(optionTag)
+		dispatchOption(optionTag, i)
+	}
+	//optionタグにvalueと表示文字を付与
+	function dispatchOption(option, value) {
+		option.textContent = value
+		option.value = value
+	}
+
+	const addr = document.getElementById('addr')
+
+	var mail = [ "@st.asojuku.ac.jp", "@gmail.com", "@ezweb.ne.jp",
+			"@docomo.ne.jp", "@softbank.jp", "" ];
+
+	for (let i = 0; i < mail.length; i++) {
+		const optionTag = document.createElement("option")
+		addr.appendChild(optionTag)
+		dispatchOption(optionTag, mail[i])
+	}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+
+
+UserInfoBeans login = (LoginInfoBeans)session.getAttribute("loginInfo");
+%>
+<a href="top"><img src="img/OGOSHI.png"></a>
