@@ -48,6 +48,7 @@ public class MovieModel {
 		try {
 			movieDao.connect();
 			movieDao.getList(userId);
+			//catchがExceptionの理由：DaoBaseが投げようとしている例外がException(全ての例外)のため//
 		} catch(Exception e) {
 			//エラーを出力画面に表示//
 			e.printStackTrace();

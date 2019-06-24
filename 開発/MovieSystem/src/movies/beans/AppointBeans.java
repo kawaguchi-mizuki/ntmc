@@ -6,6 +6,7 @@ import java.sql.Time;
 public class AppointBeans {
 	private int userId;
 	private int movieId;
+	private String movieName;
 	private int movieFee;
 	private Date movieDate;
 	private String movieSeat;
@@ -28,6 +29,14 @@ public class AppointBeans {
 
 	public void setMovieId(int movieId) {
 		this.movieId = movieId;
+	}
+
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
 	}
 
 	public int getMovieFee() {

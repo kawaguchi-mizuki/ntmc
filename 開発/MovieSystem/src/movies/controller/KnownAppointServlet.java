@@ -27,10 +27,15 @@ public class KnownAppointServlet extends HttpServlet {
 		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("");
 		List<AppointBeans> list = new ArrayList<AppointBeans>();
 		MovieModel movieModel = new MovieModel();
-		list = movieModel.getList(userInfo.getUserId());
-
-
-
+		try {
+			//movieModelのメソッドを実行する(引数：userInfoBeansにあるuserId)//
+			list = movieModel.getList(userInfo.getUserId());
+		} catch(Exception e) {
+			//エラーを出力する//
+			e.printStackTrace();
+		}
+		//取ってきた予約リストをセット//
+		request.setAttribute("list", list);
 	//画面遷移//
 	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/knownAppoint.jsp");
 	dispatcher.forward(request, response);

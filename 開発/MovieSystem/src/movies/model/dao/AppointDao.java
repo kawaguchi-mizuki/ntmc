@@ -24,8 +24,12 @@ public class AppointDao extends DaoBase{
 			stmt.setString(7,appointBeans.getMovieTheater());
 			stmt.setString(8,appointBeans.getMovieScreen());
 		} catch(SQLException e ) {
+			//エラーを出力する//
 			e.printStackTrace();
 			throw e;
+		} finally {
+			//接続を切る//
+			con.close();
 		}
 		return;
 	}
