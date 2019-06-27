@@ -14,6 +14,7 @@ public class MovieListBeans {
 	private int movieFee;
 	private String movieTheater;
 	private String movieScreen;
+	private String movieSummary;
 
 	public int getUserId() {
 		return userId;
@@ -86,4 +87,14 @@ public class MovieListBeans {
 	public void setMovieScreen(String movieScreen) {
 		this.movieScreen = movieScreen;
 	}
+
+	public String getMovieSummary() {
+		return movieSummary;
+	}
+
+	public void setMovieSummary(String movieSummary) {
+		this.movieSummary = movieSummary;
+	}
+
+	
 }

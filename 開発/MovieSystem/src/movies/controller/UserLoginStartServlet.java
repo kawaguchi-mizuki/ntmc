@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("userLoginStart")
+@WebServlet("/userLoginStart")
 public class UserLoginStartServlet extends HttpServlet {
 
 	@Override
@@ -17,7 +17,7 @@ public class UserLoginStartServlet extends HttpServlet {
 			throws ServletException, IOException{
 
 		//画面遷移//
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/loginStart.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/userLoginStart.jsp");
 		dispatcher.forward(request,response);
 	}
 }

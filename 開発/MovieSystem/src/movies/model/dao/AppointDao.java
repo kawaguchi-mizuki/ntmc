@@ -23,6 +23,7 @@ public class AppointDao extends DaoBase{
 			stmt.setString(6,appointBeans.getMovieSeat());
 			stmt.setString(7,appointBeans.getMovieTheater());
 			stmt.setString(8,appointBeans.getMovieScreen());
+
 		} catch(SQLException e ) {
 			//エラーを出力する//
 			e.printStackTrace();

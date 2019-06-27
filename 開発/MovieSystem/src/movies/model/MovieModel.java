@@ -6,14 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import movies.beans.AppointBeans;
+import movies.beans.MovieListBeans;
 import movies.model.dao.AppointDao;
 import movies.model.dao.MovieDao;
 
 public class MovieModel {
 
-	//予約のModel//
+	//映画を予約するメソッド//
 	public void appointMovie(int userId,int movieId,int movieFee,Date movieDate,Time movieTime,
-									 String movieSeat,String movieTheater,String movieScreen) {
+			String movieSeat,String movieTheater,String movieScreen) {
 		//Beansに格納//
 		AppointBeans appointBeans = new AppointBeans();
 		appointBeans.setUserId(userId);
@@ -27,21 +28,21 @@ public class MovieModel {
 
 		AppointDao appointDao = new AppointDao();
 		try {
-		 appointDao.connect();
-		 appointDao.setAppoint(appointBeans);
+			appointDao.connect();
+			appointDao.setAppoint(appointBeans);
 		} catch(Exception e) {
-		//エラーを出力画面に表示する//
-		e.printStackTrace();
+			//エラーを出力画面に表示する//
+			e.printStackTrace();
 		} finally{
-		//接続を切る//
-		if(appointDao != null) {
-		appointDao.close();
+			//接続を切る//
+			if(appointDao != null) {
+				appointDao.close();
 			}
 		}
 		return;
 	}
 
-	//映画予約確認のModel(listを返す)//
+	//映画予約確認のメソッド(listを返す)//
 	public List<AppointBeans> getList(int userId) {
 		List<AppointBeans> list = new ArrayList<>();
 		MovieDao movieDao = new MovieDao();
@@ -61,4 +62,22 @@ public class MovieModel {
 		return list;
 	}
 
+	//予約詳細のメソッド//
+	public MovieListBeans getDetail(int movieId) {
+		MovieListBeans movieListBeans = new MovieListBeans();
+		MovieDao movieDao = new MovieDao();
+		try {
+			movieDao.connect();
+			movieDao.getDetail(movieId);
+		} catch(Exception e) {
+			//エラーを出力する//
+			e.printStackTrace();
+		} finally {
+			//接続を切る//
+			if(movieDao != null) {
+				movieDao.close();
+			}
+		}
+		return movieListBeans;
+	}
 }

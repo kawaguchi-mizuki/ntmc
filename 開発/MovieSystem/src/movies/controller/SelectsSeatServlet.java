@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("selectsSeat")
+@WebServlet("/selectsSeat")
 public class SelectsSeatServlet extends HttpServlet {
 
 	@Override

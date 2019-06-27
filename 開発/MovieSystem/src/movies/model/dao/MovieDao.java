@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import movies.beans.AppointBeans;
+import movies.beans.MovieListBeans;
 
 public class MovieDao extends DaoBase{
 	//映画予約リストを返す処理//
@@ -44,5 +45,34 @@ public class MovieDao extends DaoBase{
 			con.close();
 		}
 		return list;
+	}
+
+	//映画詳細のメソッド//
+	public MovieListBeans getDetail(int movieId) throws SQLException{
+		if(con == null) {
+			//接続していない場合はエラー//
+			return null;
+		}
+		MovieListBeans movieListBeans = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			//select文実行//
+			stmt = con.prepareStatement("select * from movie where movieId = ?");
+			//実行するための引数をセット//
+			stmt.setInt(1, movieId);
+			//実行//
+			rs = stmt.executeQuery();
+			while(rs.next()) {
+				movieListBeans = new MovieListBeans();
+				movieListBeans.setMovieId(rs.getInt("movie_id"));
+				movieListBeans.setMovieName(rs.getString("movie_name"));
+				movieListBeans.setMovieSummary(rs.getString("movie_view"));
+			}
+		} catch(SQLException e) {
+		} finally {
+
+		}
+		return movieListBeans;
 	}
 }

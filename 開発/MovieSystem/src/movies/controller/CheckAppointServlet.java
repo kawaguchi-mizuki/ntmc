@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import movies.model.MovieModel;
 
-@WebServlet("checkAppoint")
+@WebServlet("/checkAppoint")
 public class CheckAppointServlet extends HttpServlet {
 
 	/*Overrideとは
@@ -24,6 +24,7 @@ public class CheckAppointServlet extends HttpServlet {
 	  引数も同じ数、同じ順番にする必要がある。
 	  今回はHttoServletクラスのメソッドをオーバーライドしている。*/
 	//オーバーライド//
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 		HttpSession session = request.getSession();

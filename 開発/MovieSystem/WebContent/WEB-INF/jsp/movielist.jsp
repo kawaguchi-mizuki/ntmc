@@ -15,6 +15,7 @@
 		List<MovieListBeans> list = (List<MovieListBeans>) request.getAttribute("list");
 		UserInfoBeans login = (UserInfoBeans) session.getAttribute("userInfo");
 	%>
+	<jsp:include page="./header/header.jsp" />
 	<h1>映画一覧</h1>
 	<input type="text" name="search">
 	<input type="button" value="検索">

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import movies.beans.UserInfoBeans;
 import movies.model.UserModel;
 
-@WebServlet("userLogin")
+@WebServlet("/userLogin")
 public class UserLoginServlet extends HttpServlet {
 
 	@Override

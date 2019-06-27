@@ -16,10 +16,11 @@ import movies.beans.AppointBeans;
 import movies.beans.UserInfoBeans;
 import movies.model.MovieModel;
 
-@WebServlet("knownAppoint")
+@WebServlet("/knownAppoint")
 public class KnownAppointServlet extends HttpServlet {
 
 	//Override//
+	@Override
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)
 						throws ServletException,IOException{
 		//セッション取得//
