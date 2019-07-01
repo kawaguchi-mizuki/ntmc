@@ -33,11 +33,13 @@
 			<td><%=movielist.getAppointdate()%></td>
 			<td><%=movielist.getStarttime() %></td>
 			<td><%=movielist.getFinishtime() %></td>
-			<td><a href="ditail<%=movielist.getMovieId()%>"><%=movielist.getMovieName() %></a></td>
-		</tr>
+			<td><a href="ditailmovie"><%=movielist.getMovieName() %></a></td>
 		<%} %>
-	</table>
 
+		</tr>
+
+
+</table>
 
 </body>
 </html>
