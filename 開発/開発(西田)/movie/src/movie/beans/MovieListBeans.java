@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class MovieListBeans implements Serializable {
-      private int movieId;
+      private String movieId;
       private String movieName;
       private String movieGenre;
       private String movieCast;
@@ -17,10 +17,10 @@ public class MovieListBeans implements Serializable {
       private Time finishtime;
 
 
-	public int getMovieId() {
+	public String getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(int movieId) {
+	public void setMovieId(String movieId) {
 		this.movieId = movieId;
 	}
 	public String getMovieName() {

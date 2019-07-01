@@ -28,6 +28,7 @@ public class MovieDao extends DaoBase {
 					beans.setAppointdate(rs.getDate("appoint_date"));
 					beans.setStarttime(rs.getTime("movie_start_time"));
 					beans.setFinishtime(rs.getTime("movie_finish_time"));
+					beans.setMovieId(rs.getString("movie_id"));
 
 					list.add(beans);
 
