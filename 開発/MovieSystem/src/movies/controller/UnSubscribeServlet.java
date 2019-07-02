@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import movies.beans.UserInfoBeans;
 import movies.model.UserModel;
 
-@WebServlet("/unsub")
-public class UnsubscribeSevlet extends HttpServlet {
+@WebServlet("/unSubscribe")
+public class UnSubscribeServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException{
@@ -24,7 +24,8 @@ public class UnsubscribeSevlet extends HttpServlet {
 
 		UserModel userModel = new UserModel();
 
-		userModel.unsubFromUser(userInfo.getUserId());
+		//退会のメソッドを実行する//
+		userModel.(userInfo.getUserId());
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/unsubscribe.jsp");
 		dispatcher.forward(request, response);
