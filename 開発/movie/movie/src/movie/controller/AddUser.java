@@ -29,14 +29,11 @@ public class AddUser extends HttpServlet {
 		String birthday = year+"-"+month+"-"+day;
 
 
-		//空白が一つでもあればエラーを出す
-		if(mail==""||name==""||sex==""||password==""||r_password==""||year==""||month==""||day=="") {
-			response.sendRedirect("adduser?errflg=1");
-			return;
+
 
 		//パスワードの入力値が再入力の値と違うならエラーをだす
-		}else if(!(password.equals(r_password))) {
-			response.sendRedirect("adduser?errflg=2");
+		if(!(password.equals(r_password))) {
+			response.sendRedirect("adduser?errflg=1");
 			return;
 		}
 

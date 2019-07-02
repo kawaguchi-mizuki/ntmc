@@ -1,10 +1,16 @@
+body{
+	background-image:url("../img/background.jpg");
+	background-size:1800px 700px ;
+	background-weight:700px;
 
+}
 form.cmxform {
    margin: 3em auto;
   padding: 0 1em;
   max-width: 370px;
     font-size:11px;
     text-align: center;
+    color:white;
 
 }
 form.cmxform fieldset {
@@ -17,6 +23,8 @@ form.cmxform legend {
     padding:1em 2px 0 2px;
     font-weight:bold;
     font-size:30px;
+    color:white;
+
 }
 form.cmxform em {
     color:#f00;
@@ -98,4 +106,4 @@ form.cmxform .sr {
 .err{
  color:red;
 }
-}
+

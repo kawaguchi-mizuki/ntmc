@@ -1,0 +1,4 @@
+﻿#head p{
+	float:clear;
+
+}

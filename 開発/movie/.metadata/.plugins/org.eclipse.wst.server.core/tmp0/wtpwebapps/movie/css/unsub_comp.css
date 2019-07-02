@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+form.cmxform {
+   margin: 3em auto;
+  padding: 0 1em;
+  max-width: 370px;
+    font-size:11px;
+    text-align: center;
+
+}
+form.cmxform fieldset {
+    width:370px;
+    border:0;
+    border-top:1px solid #c9dca6;
+    background:url(/content/img/css/cmxform-fieldset.gif) left bottom repeat-x;
+}
+form.cmxform legend {
+    padding:1em 2px 0 2px;
+    font-weight:bold;
+    font-size:30px;
+    color:white;
+}
+form.cmxform fieldset fieldset {
+    border:none;
+    background:none;
+}
+    form.cmxform fieldset fieldset legend {
+        font-weight:normal;
+        padding-left:0;
+    }
+
+form.cmxform .sr {
+    position:absolute;
+    left:-9999px; top:0;
+    width:1px; height:1px;
+    overflow:hidden;
+}
+.send{
+	float:left;
+	margin-left:120px;
+	display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background:red;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+h1{
+	margin-top:20px;
+	font-size:30px;
+	color:white;
+}
+body{
+	background-image:url("../img/background.jpg");
+	background-size:1800px 700px ;
+	background-weight:700px;
+
+}

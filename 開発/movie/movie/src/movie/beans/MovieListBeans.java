@@ -1,15 +1,17 @@
 package movie.beans;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class MovieListBeans implements Serializable {
 	private int movieId;
     private String movieName;
-    private String movieGenre;
-    private String movieCast;
+    private int GenreId;
+    private int CastId;
     private String movieSummary;
-    private String movieSeat;
     private int adminId;
+	private Date start;
+	private Date finish;
 	public int getMovieId() {
 		return movieId;
 	}
@@ -22,17 +24,17 @@ public class MovieListBeans implements Serializable {
 	public void setMovieName(String movieName) {
 		this.movieName = movieName;
 	}
-	public String getMovieGenre() {
-		return movieGenre;
+	public int getGenreId() {
+		return GenreId;
 	}
-	public void setMovieGenre(String movieGenre) {
-		this.movieGenre = movieGenre;
+	public void setGenreId(int genreId) {
+		GenreId = genreId;
 	}
-	public String getMovieCast() {
-		return movieCast;
+	public int getCastId() {
+		return CastId;
 	}
-	public void setMovieCast(String movieCast) {
-		this.movieCast = movieCast;
+	public void setCastId(int castId) {
+		CastId = castId;
 	}
 	public String getMovieSummary() {
 		return movieSummary;
@@ -40,19 +42,24 @@ public class MovieListBeans implements Serializable {
 	public void setMovieSummary(String movieSummary) {
 		this.movieSummary = movieSummary;
 	}
-	public String getMovieSeat() {
-		return movieSeat;
-	}
-	public void setMovieSeat(String movieSeat) {
-		this.movieSeat = movieSeat;
-	}
 	public int getAdminId() {
 		return adminId;
 	}
 	public void setAdminId(int adminId) {
 		this.adminId = adminId;
 	}
-
+	public Date getStart() {
+		return start;
+	}
+	public void setStart(Date start) {
+		this.start = start;
+	}
+	public Date getFinish() {
+		return finish;
+	}
+	public void setFinish(Date finish) {
+		this.finish = finish;
+	}
 
 
 }
