@@ -1,0 +1,33 @@
+form.cmxform {
+   margin: 3em auto;
+  padding: 0 1em;
+  max-width: 370px;
+    font-size:11px;
+    text-align: center;
+
+}
+form.cmxform fieldset {
+    width:370px;
+    border:0;
+    border-top:1px solid #c9dca6;
+    background:url(/content/img/css/cmxform-fieldset.gif) left bottom repeat-x;
+}
+form.cmxform legend {
+    padding:1em 2px 0 2px;
+    font-weight:bold;
+    font-size:30px;
+}
+form.cmxform em {
+    color:#f00;
+    background-color:transparent;
+    font-weight:normal;
+    font-style:normal;
+    font-size:.8em;
+}
+form.cmxform label {
+    display:block;
+    float:left;
+    width:120px;
+    font-weight:bold;
+    font-size:13px;
+}

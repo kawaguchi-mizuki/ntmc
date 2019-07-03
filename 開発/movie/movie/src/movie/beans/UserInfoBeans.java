@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class UserInfoBeans implements Serializable {
-	private int id;
-	public int getId() {
+	private static int id;
+	public static int getId() {
 		return id;
 	}
 	public void setId(int id) {

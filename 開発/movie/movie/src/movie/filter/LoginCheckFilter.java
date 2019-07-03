@@ -24,7 +24,7 @@ public class LoginCheckFilter implements Filter {
 	//チェック除外画面
 	private String excludeDispList[] =
 		{
-				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview","/mypage"
+				"/auth","/login","/user","/logout","/adduser","/addusercomp","/movieview"
 		};
 	private String excludeExtList[] =
 		{
@@ -44,12 +44,12 @@ public class LoginCheckFilter implements Filter {
 		// TODO 自動生成されたメソッド・スタブ
 		//リクエストのサーブレットパスを取得
 		String servletPath = ((HttpServletRequest)request).getServletPath();
-
 		//js,cs,png,gif,ico,jpgは除外
 		if( Arrays.asList(excludeExtList).contains(getExt(servletPath))){
 			chain.doFilter(request, response);
 			return;
 		}
+
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html); charset=UTF-8");
 
@@ -65,7 +65,7 @@ public class LoginCheckFilter implements Filter {
 
 		if( session == null ){
 			//セッションがない場合はログイン画面へ
-			((HttpServletResponse)response).sendRedirect("login");
+			((HttpServletResponse)response).sendRedirect("listmovie");
 			return;
 		}
 		UserInfoBeans userInfo =

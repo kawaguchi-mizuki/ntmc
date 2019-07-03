@@ -1,0 +1,105 @@
+body{
+	background-image:url("../img/background.jpg");
+	background-size:1800px 700px ;
+	background-weight:700px;
+}
+form.cmxform {
+   margin: 3em auto;
+  padding: 0 1em;
+  max-width: 370px;
+    font-size:11px;
+    text-align: center;
+
+}
+form.cmxform fieldset {
+    width:370px;
+    border:0;
+    border-top:1px solid #c9dca6;
+    background:url(/content/img/css/cmxform-fieldset.gif) left bottom repeat-x;
+}
+form.cmxform legend {
+    padding:1em 2px 0 2px;
+    font-weight:bold;
+    font-size:30px;
+}
+form.cmxform em {
+    color:#f00;
+    background-color:transparent;
+    font-weight:normal;
+    font-style:normal;
+    font-size:.8em;
+}
+form.cmxform label {
+    display:block;
+    float:left;
+    width:120px;
+    font-weight:bold;
+    font-size:13px;
+}
+form.cmxform fieldset ol {
+    margin:0;
+    padding:0;
+}
+form.cmxform fieldset li {
+    list-style:none;
+    clear:both;
+    margin:0; padding:5px 5px 7px 7px;
+    background:url(/content/img/css/cmxform-divider.gif) left bottom repeat-x;
+}
+form.cmxform fieldset fieldset {
+    border:none;
+    background:none;
+}
+    form.cmxform fieldset fieldset legend {
+        font-weight:normal;
+        padding-left:0;
+    }
+    form.cmxform fieldset fieldset label {
+        float:none;
+        width:auto;
+    }
+form.cmxform .sr {
+    position:absolute;
+    left:-9999px; top:0;
+    width:1px; height:1px;
+    overflow:hidden;
+}
+.back{
+	float:left;
+	display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.send{
+	float:left;
+	margin-left:120px;
+	display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background:red;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.err{
+ color:red;
+}
+

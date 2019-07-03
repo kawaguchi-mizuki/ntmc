@@ -9,22 +9,23 @@
 </head>
 <body>
 
+
 	<form class="cmxform" action="user" method="POST">
 		<fieldset>
 			<legend>新規会員登録</legend>
 			<ol>
 				<li><label for="address">メールアドレス<em>*</em></label>
-				 <input id="mail" name="mail" /></li>
+				 <input type ="email" id="mail" name="mail" required="required"/></li>
 
 				<li><label for="name">名前<em>*</em></label>
-				<input id="name" name="name" /></li>
+				<input id="name" name="name"required="required" /></li>
 
 				<li><label for="sex">性別<em>*</em></label>
 				<input type="radio" name="sex" value="男" checked="checked">男
 				<input type="radio" name="sex" value="女">女</li>
 
-				<li><label for="dob">生年月日 <span class="sr">生年月日(年)</span><em>*</em></label>
-					<select id="year" name="yaer"></select>
+				<li><label for="year">生年月日 <span class="sr">生年月日(年)</span><em>*</em></label>
+					<select id="year" name="year"></select>
 					<label for="month" class="sr">生年月日（月) <em>*</em></label>
 				    <select id="month" name="month"></select>
 				    <label for="day" class="sr">生年月日 (日) <em>*</em></label>
@@ -32,19 +33,15 @@
 				</li>
 
 				<li><label for="password">パスワード<em>*</em></label>
-				 <input type="password" id="password" name="password" /></li>
+				 <input type="password" id="password" name="password" required="required"/></li>
 
 				<li><label for="postcode">パスワード再入力<em>*</em></label>
-				<input type="password" id="r-password" name="r-password" /></li>
+				<input type="password" id="r-password" name="r-password" required="required"/></li>
 
 				<li>
 					<%
 						String errflg = request.getParameter("errflg");
-					%> <%
- 						if (errflg != null && errflg.equals("1")) {
- 					%>
-					<p class="err">空白があります！</p> <%
- 						} else if (errflg != null && errflg.equals("2")) {
+					 if (errflg != null && errflg.equals("1")) {
  					%>
 					<p class="err">パスワードは同じ文字をいれてください！</p> <%
  						}
@@ -88,16 +85,6 @@
 		option.value = value
 	}
 
-	const addr = document.getElementById('addr')
-
-	var mail = [ "@st.asojuku.ac.jp", "@gmail.com", "@ezweb.ne.jp",
-			"@docomo.ne.jp", "@softbank.jp", "" ];
-
-	for (let i = 0; i < mail.length; i++) {
-		const optionTag = document.createElement("option")
-		addr.appendChild(optionTag)
-		dispatchOption(optionTag, mail[i])
-	}
 </script>
 
 
