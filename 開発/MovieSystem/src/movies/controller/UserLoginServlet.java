@@ -42,7 +42,7 @@ public class UserLoginServlet extends HttpServlet {
 		}
 
 		//画面遷移//
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/top.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/listMovie.jsp");
 		dispatcher.forward(request,response);
 	}
 }

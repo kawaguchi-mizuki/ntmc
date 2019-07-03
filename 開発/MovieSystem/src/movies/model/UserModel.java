@@ -28,4 +28,19 @@ public class UserModel {
 		//ログイン情報を返す//
 		return userInfo;
 	}
+
+	public void createUser(String mail, String name, String sex, String birthday, String password) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	public void unsubFromUser(int id) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	public void changeInfoUser(int id, String mail, String name, String password) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
 }

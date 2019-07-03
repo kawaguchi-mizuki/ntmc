@@ -12,22 +12,24 @@ import javax.servlet.http.HttpSession;
 
 import movies.beans.UserInfoBeans;
 import movies.model.UserModel;
-
 @WebServlet("/unSubscribe")
 public class UnSubscribeServlet extends HttpServlet {
-	@Override
-	protected void doGet(HttpServletRequest request,HttpServletResponse response)
-			throws ServletException, IOException{
-		HttpSession session = request.getSession();
 
-		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("");
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
+
+		//入力された値を取得
+		UserInfoBeans userInfoBeans = new UserInfoBeans();
+		int id = userInfoBeans.getUserId();
+		HttpSession session = request.getSession();
 
 		UserModel userModel = new UserModel();
 
-		//退会のメソッドを実行する//
-		userModel.(userInfo.getUserId());
+		userModel.unsubFromUser(id);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/unsubscribe.jsp");
-		dispatcher.forward(request, response);
+		session.invalidate();
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/unSubscribe.jsp");
+		dispatcher.forward(request, respons);
 	}
 }

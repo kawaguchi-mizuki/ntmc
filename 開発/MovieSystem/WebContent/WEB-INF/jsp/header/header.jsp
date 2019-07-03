@@ -10,6 +10,5 @@
 	<%
 		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
 	%>
-	<p><%=userInfo.getName()%></p>
-	<a href="mypage">マイページ</a>
+
 </div>

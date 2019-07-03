@@ -1,42 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ログイン画面</title>
+<title>ログイン</title>
+<link rel="stylesheet" href="css/user_login.css">
 </head>
 <body>
-	<% String errflg = request.getParameter("errflg");
-   if(errflg != null){
-     if(errflg.equals("1")){%>
-	<p>
-		<font color="red">ログインに失敗しました。学籍番号またはパスワードが間違っています。</font>
-	</p>
-	<%}%>
-	<% }%>
 
-	<h1>ログイン</h1>
 
-	<a href="adduser"
-		class="btn-square-slant"
-		style="position: absolute; right: 0px; top: 0px">新規登録</a>
-	<form action="auth" method="post">
-		<table align="center">
-			<tr>
-				<th>メールアドレス</th>
-				<td><input type="text" name="mail"></td>
-			</tr>
-			<tr>
-				<th>パスワード</th>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<th></th>
-				<td align="left"><input type="submit" class="btn-square"
-					value="ログイン"></td>
-			</tr>
-		</table>
-	</form>
+	<div class="form-wrapper">
+		<h1>会員ログイン</h1>
+		<form action="userLogin" method="POST">
+			<div class="form-item">
+				<label for="email"></label> <input type="email" name="mail"
+					required="required" placeholder="メールアドレス"></input>
+			</div>
+			<div class="form-item">
+				<label for="password"></label> <input type="password"
+					name="password" required="required" placeholder="パスワード"></input>
+			</div>
+
+
+			<%
+				String errflg = request.getParameter("errflg");
+				if (errflg != null) {
+					if (errflg.equals("1")) {
+			%>
+			<p class="err">学籍番号またはパスワードが間違っています。</p>
+			<%
+				}
+			%>
+			<%
+				}
+			%>
+
+
+			<div class="button-panel">
+				<input type="submit" class="button" title="Sign In" value="ログイン"></input>
+			</div>
+		</form>
+		<div class="form-footer">
+			<p>
+				<a href="adduser">新規会員登録</a>
+			</p>
+		</div>
+	</div>
+
 </body>
 </html>

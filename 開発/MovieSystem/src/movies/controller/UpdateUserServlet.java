@@ -8,13 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/mypage")
-public class MyPageServlet extends HttpServlet {
-
+@WebServlet("/updateUser")
+public class UpdateUserServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
-		// TODO 自動生成されたメソッド・スタブ
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/updateUser.jsp");
 		dispatcher.forward(request, respons);
 	}
 }

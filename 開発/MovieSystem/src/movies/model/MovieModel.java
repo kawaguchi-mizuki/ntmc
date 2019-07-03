@@ -80,4 +80,9 @@ public class MovieModel {
 		}
 		return movieListBeans;
 	}
+
+	public List<MovieListBeans> getMovieList() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }
