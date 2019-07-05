@@ -20,17 +20,16 @@ import movies.beans.UserInfoBeans;
 @WebFilter("/*")
 public class LoginCheckFilter implements Filter {
 
-
-	//チェック除外画面//
-	private String excludeDispList[] = {
-			"/userLoginStart","/userLogin","/addUser","/logout","/addUserComp","/listMovie"
-	};
-
 	@Override
-	public void destroy() {
+	public void init(FilterConfig arg0) throws ServletException {
 		//無処理//
 		;
 	}
+
+	//チェック除外画面//
+	private String excludeDispList[] = {
+		"/userLogin","/addUser","/logout","/addUserComp","/listMovie","/unSubscribe","/unSubComp"
+	};
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -45,40 +44,47 @@ public class LoginCheckFilter implements Filter {
 		String servletPath = ((HttpServletRequest)request).getServletPath();
 		if(Arrays.asList(excludeExtList).contains(getExt(servletPath))) {
 			chain.doFilter(request, response);
+			System.out.println("サーブレットパス取得");
 			return;
 		}
 
 		//除外画面に含まれている場合はチェックしない//
 		if( Arrays.asList(excludeDispList).contains(servletPath)) {
 			chain.doFilter(request, response);
+			System.out.println("除外画面チェック");
 			return;
 		}
 
 		//ログインセッションを取得し、存在しない場合は、ログイン画面に飛ばす//
 		HttpSession session = ((HttpServletRequest)request).getSession(false);
-
-		if( session == null ) {
+		System.out.println("1個目if文判定前");
+		/*if( session == null ) {
 			//セッションがない場合は映画一覧画面へ//
-			((HttpServletResponse)response).sendRedirect("listMovie ?loginFlg=1");
+			System.out.println("セッション処理");
+			((HttpServletResponse)response).sendRedirect("listMovie");
 			return;
-		}
+		}*/
 
 		//ログイン情報をセッションに保存//
 		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("userInfo");
 
 		if( userInfo == null ) {
+			System.out.println("ログイン情報処理");
 			//映画一覧画面へ転送//
 			((HttpServletResponse)response).sendRedirect("listMovie");
+			return;
 		}else {
 			chain.doFilter(request, response);
+			return;
 		}
 	}
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
+	public void destroy() {
 		//無処理//
 		;
 	}
+
 	private String getExt(String fileName) {
 
 		if(fileName == null)

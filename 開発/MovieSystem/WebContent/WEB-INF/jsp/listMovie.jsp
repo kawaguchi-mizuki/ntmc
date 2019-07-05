@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>映画一覧画面</title>
 <link href="css/list.css" rel="stylesheet" type="text/css">
 </head>
 <body>
