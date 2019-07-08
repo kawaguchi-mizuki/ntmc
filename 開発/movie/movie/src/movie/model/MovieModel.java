@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+package model;
+
+public class MovieModel {
+	public void appointMovie(UserInfoBeans.getUserId) {
+		
+	}
+}
+=======
 package movie.model;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -79,3 +88,4 @@ public class MovieModel {
 	}
 
 }
+>>>>>>> master

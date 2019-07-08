@@ -1,0 +1,251 @@
+@charset "UTF-8";
+a{
+	color:black;
+	text-decoration: none;
+}
+.Adname{
+	font-size:20px;
+	margin-top:20px;
+	text-align:center;
+}
+
+#news{
+	color:red;
+}
+
+.header{
+	border:solid 1px black;
+}
+.Adlogin{
+	margin-left:40px;
+}
+
+.finish{
+	text-align:center;
+}
+
+h1{
+	text-align:center;
+}
+
+h1.touroku{
+	color:red;
+	text-shadow: 3px 4px 3px #A4C6FF;
+}
+
+h1.common{
+	color:red;
+	text-shadow: 3px 4px 3px #A4C6FF;
+	font-size:40px;
+
+}
+
+p.complete{
+	font-size:40px;
+    text-align:center;
+}
+
+#t_btn{
+	text-align:right;
+}
+
+button.touroku{
+	width:150px;
+	height:80px;
+	font-size:25px;
+	margin-right:50px;
+	border:solid 1px black;
+	background-color:white;
+}
+
+table{
+	margin-left:auto;
+	margin-right:auto;
+}
+table.delcheck{
+	border-collapse: collapse;
+}
+table.selectseat{
+	border-collapse: collapse;
+
+}
+
+span{
+	color:red;
+}
+tr.nothing{
+	height:30px;
+}
+
+td{
+	font-size:30px;
+}
+
+td.koumoku{
+	width:164px;
+}
+
+td.deletemove{
+	width:250px;
+}
+td.seat{
+	text-align:right;
+	padding-right:20px;
+}
+input.btn1{
+	background-color:#6699FF;
+	border-radius:5px;
+	width:30px;
+	height:30px;
+}
+input.btn2{
+	background-color:#FFCC00;
+	border-radius:5px;
+	width:30px;
+	height:30px;
+}
+
+
+select.janru{
+	width:200px;
+	height:500px;
+}
+
+
+button.login{
+	text-align:center;
+}
+
+table.selectseat{
+	margin-bottom:20px;
+}
+#loginbtn{
+	text-align:center;
+	margin-top:20px;
+}
+
+button.login{
+	height:80px;
+	width:150px;
+	font-size:25px;
+	border:solid 1px black;
+	background-color:white;
+}
+.Adtouroku{
+	margin-right:50px;
+	margin-left:50px;
+}
+
+select{
+	width:145px;
+	height:35px;
+}
+
+input.back{
+    font-size:25px;
+	margin-left:400px;
+}
+
+input.check{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.kettei{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.delete{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.update{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.touroku{
+	font-size:25px;
+	margin-left:550px;
+}
+
+input.mvt{
+	margin-left:400px;
+	height:200px;
+	width:300px;
+	font-size:60px;
+	border-radius:15px;
+	background-color:#99CCFF;
+	text-shadow: -4px -4px 1px white;
+
+
+}
+input.topreturn{
+	font-size:25px;
+	margin-left:350px;
+}
+
+input.mvy{
+	margin-left:20px;
+	height:200px;
+	width:300px;
+	font-size:60px;
+	border-radius:15px;
+	background-color:#99CCFF;
+	text-shadow: -4px -4px 1px white;
+
+
+}
+
+input.mvk{
+    margin-top:10px;
+	margin-left:450px;
+	height:200px;
+	width:300px;
+	font-size:60px;
+	border-radius:15px;
+	background-color:#99CCFF;
+	text-shadow: -4px -4px 1px white;
+
+}
+
+input.mvs{
+	margin-left:20px;
+	height:200px;
+	width:300px;
+	font-size:60px;
+	border-radius:15px;
+    background-color:#99CCFF;
+    text-shadow: -4px -4px 1px white;
+}
+
+input.inmove{
+	height:40px;
+	width:200px;
+}
+
+input.kensaku{
+	height:50px;
+	width:70px;
+}
+
+p.messagecheck{
+	text-align:center;
+	color:red;
+	font-size:20px;
+}
+input.topback{
+      text-align:center;
+	font-size:30px;
+	width:350px;
+}
+.btn{
+	width:10px;
+	height:10px;
+}
+.setumei{
+	text-align:center;
+	font-size:20px;
+}
