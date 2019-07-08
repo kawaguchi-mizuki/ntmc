@@ -24,6 +24,8 @@ drop table if exists movie;
 drop table if exists appoint;
 //予約明細テーブル削除//
 drop table if exists appoint_meisai;
+//映画一覧テーブル削除//
+drop table if exists movie_list;
 
 //管理者テーブル作成//
  create table admin
@@ -99,6 +101,12 @@ drop table if exists appoint_meisai;
  references cast (cast_id),
  foreign key (movie_admin_id)
  references admin (admin_id));
+
+//映画一覧テーブル作成// 
+ create table movie_list
+(movie_list_id int auto_increment not null,
+ movie_id int not null,
+ movie
 
 //予約テーブル作成//
  create table appoint
