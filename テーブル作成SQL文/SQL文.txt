@@ -2,30 +2,29 @@
 (//はコメントを表す)
 
 //createする予定のテーブルが存在しないようにする//
-//管理者テーブル削除//
+
 drop table if exists admin;
-//ジャンルテーブル削除//
+
 drop table if exists genre;
-//映画館テーブル削除//
+
 drop table if exists theater;
-//スクリーンテーブル削除//
+
 drop table if exists screen;
-//料金テーブル削除//
+
 drop table if exists rate;
-//ユーザーテーブル削除//
+
 drop table if exists user;
-//上映時間テーブル削除//
+
 drop table if exists movie_time;
-//映画テーブル削除//
+
 drop table if exists movie;
-//予約テーブル削除//
+
 drop table if exists appoint;
-//予約明細テーブル削除//
+
 drop table if exists appoint_meisai;
-//映画一覧テーブル削除//
+
 drop table if exists movie_list;
 
-//管理者テーブル作成//
  create table admin
 (admin_id int auto_increment not null,
  admin_name varchar(128) not null,
@@ -82,8 +81,6 @@ drop table if exists movie_list;
  primary key (movie_id),
  foreign key (movie_genre_id)
  references genre (genre_id),
- foreign key (movie_cast_id)
- references cast (cast_id),
  foreign key (movie_admin_id)
  references admin (admin_id));
 
