@@ -20,11 +20,16 @@ public class ListMovieServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String loginFlg = (String)request.getAttribute("loginFlg");
+		//映画情報を取得するためのモデル//
 		MovieModel movieModel = new MovieModel();
 		List<MovieListBeans> list = movieModel.getMovieList();
-
 		request.setAttribute("list", list);
 
+		//ログインを判定するための素材（フラグ）を渡す//
+		request.setAttribute("loginFlg", loginFlg);
+
+		//画面遷移//
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/listMovie.jsp");
 		dispatcher.forward(request, response);
 	}
