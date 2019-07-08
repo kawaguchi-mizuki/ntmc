@@ -6,8 +6,6 @@
 drop table if exists admin;
 //ジャンルテーブル削除//
 drop table if exists genre;
-//キャストテーブル削除//
-drop table if exists cast;
 //映画館テーブル削除//
 drop table if exists theater;
 //スクリーンテーブル削除//
@@ -31,28 +29,19 @@ drop table if exists movie_list;
  create table admin
 (admin_id int auto_increment not null,
  admin_name varchar(128) not null,
- admin_password varchar(64) not null,
+ admin_password varchar(128) not null,
  primary key (admin_id));
 
-//ジャンルテーブル作成//
  create table genre
 (genre_id int auto_increment not null,
  genre_name varchar(128) not null,
  primary key (genre_id));
 
-//キャストテーブル作成//
- create table cast
-(cast_id int auto_increment not null,
- cast_name varchar(128) not null,
- primary key (cast_id));
-
-//映画館テーブル作成//
  create table theater
 (theater_id int auto_increment not null,
  theater_name varchar(128) not null,
  primary key (theater_id));
 
-//スクリーンテーブル作成//
  create table screen
 (screen_id int auto_increment not null,
  screen_theater_id int not null,
@@ -61,35 +50,31 @@ drop table if exists movie_list;
  foreign key (screen_theater_id)
  references theater (theater_id));
 
-//料金テーブル作成//
  create table rate
 (rate_id int auto_increment not null,
  rate int not null,
  primary key (rate_id));
 
-//ユーザーテーブル作成//
  create table user
 (user_id int auto_increment not null,
- user_mail varchar(64) not null,
- user_name varchar(64) not null,
+ user_mail varchar(128) not null,
+ user_name varchar(128) not null,
  user_sex varchar(4) not null,
  user_birthday date not null,
- user_password varchar(64) not null,
+ user_password varchar(128) not null,
  primary key (user_id));
 
-//上映時間テーブル作成//
  create table movie_time
 (movie_time_id int auto_increment not null,
  movie_start_time time not null,
  movie_finish_time time not null,
  primary key (movie_time_id));
 
-//映画テーブル作成//
  create table movie
 (movie_id int auto_increment not null,
  movie_name varchar(128) not null,
  movie_genre_id int not null,
- movie_cast_id int not null,
+ movie_cast_name varchar(128) not null,
  movie_view varchar(128) not null,
  movie_admin_id int not null,
  movie_start date not null,
@@ -102,42 +87,36 @@ drop table if exists movie_list;
  foreign key (movie_admin_id)
  references admin (admin_id));
 
-//映画一覧テーブル作成// 
  create table movie_list
 (movie_list_id int auto_increment not null,
  movie_id int not null,
- movie
+ movie_time_id int not null,
+ primary key (movie_list_id),
+ foreign key (movie_id)
+ references movie (movie_id),
+ foreign key (movie_time_id)
+ references movie_time (movie_time_id));
 
-//予約テーブル作成//
  create table appoint
 (appoint_id int auto_increment not null,
- appoint_movie_id int not null,
- appoint_theater_id int not null,
+ appoint_movie_list_id int not null,
  appoint_screen_id int not null,
  appoint_date date not null,
- appoint_movie_time int not null,
  appoint_user_id int not null,
- appoint_rate_id int not null,
  primary key (appoint_id),
- foreign key (appoint_movie_id)
- references movie (movie_id),
- foreign key (appoint_theater_id)
- references theater ( theater_id),
+ foreign key (appoint_movie_list_id)
+ references movie_list (movie_list_id),
  foreign key (appoint_screen_id)
  references screen ( screen_id),
- foreign key (appoint_movie_time)
- references movie_time ( movie_time_id),
  foreign key (appoint_user_id)
- references user ( user_id),
- foreign key (appoint_rate_id)
- references rate ( rate_id));
+ references user ( user_id));
 
-//予約明細テーブル作成//
  create table appoint_meisai
-(appoint_meisai_appoint_id int auto_increment not null,
+(appoint_meisai_id int auto_increment not null,
+ appoint_meisai_appoint_id int not null,
  appoint_meisai_seat varchar(8) not null, 
  appoint_meisai_rate_id int not null,
- primary key (appoint_meisai_appoint_id , appoint_meisai_seat),
+ primary key (appoint_meisai_id),
  foreign key (appoint_meisai_appoint_id)
  references appoint (appoint_id),
  foreign key (appoint_meisai_rate_id)
