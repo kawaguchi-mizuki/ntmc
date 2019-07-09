@@ -28,7 +28,7 @@ public class LoginCheckFilter implements Filter {
 
 	//チェック除外画面//
 	private String excludeDispList[] = {
-		"/userLoginStart","/addUser","/logout","/addUserComp","/listMovie","/unSubscribe","/unSubComp"
+		"/userLoginStart","/userLogin","/addUser","/logout","/addUserComp","/listMovie","/unSubscribe","/unSubComp"
 	};
 
 	@Override
@@ -61,7 +61,7 @@ public class LoginCheckFilter implements Filter {
 		if( session == null ) {
 			//セッションがない場合は映画一覧画面へ//
 			System.out.println("セッション処理");
-			((HttpServletResponse)response).sendRedirect("listMovie?loginFlg=1");
+			((HttpServletResponse)response).sendRedirect("listMovie");
 			return;
 		}
 
@@ -71,7 +71,7 @@ public class LoginCheckFilter implements Filter {
 		if( userInfo == null ) {
 			System.out.println("ログイン情報処理");
 			//映画一覧画面へ転送//
-			((HttpServletResponse)response).sendRedirect("listMovie?loginFlg=1");
+			((HttpServletResponse)response).sendRedirect("listMovie");
 			return;
 		}else {
 			chain.doFilter(request, response);

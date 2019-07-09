@@ -1,0 +1,12 @@
+映画予約システム　サンプルデータSQL文
+insert into admin(admin_name,admin_password) values ('管理者テストデータ1','a');
+insert into genre(genre_name) values ('ジャンルテストデータ1');
+insert into theater(theater_name) values ('映画館テストデータ1');
+insert into screen(screen_theater_id,screen_seat) values (1,1);
+insert into movie_time(movie_start_time,movie_finish_time) values ('2019-07-08 12:00:00','2019-07-08 14:30:00');
+insert into user(user_mail,user_name,user_sex,user_birthday,user_password) values ('a@gmail.com','ユーザーテストデータ1','男','1999-01-05','a');
+insert into rate(rate) values (1000);
+insert into movie(movie_name,movie_genre_id,movie_cast_name,movie_view,movie_admin_id,movie_start,movie_finish) values ('映画テストデータ1',1,'キャストテストデータ1','概要テストデータ1',1,'2019-07-08','2109-07-09');
+insert into movie_list(movie_id,movie_time_id) values (1,1);
+insert into appoint(appoint_movie_list_id,appoint_screen_id,appoint_date,appoint_user_id) values (1,1,'2019-07-08',1);
+insert into appoint_meisai(appoint_meisai_appoint_id,appoint_meisai_seat,appoint_meisai_rate_id) values (1,'座席A1',1);

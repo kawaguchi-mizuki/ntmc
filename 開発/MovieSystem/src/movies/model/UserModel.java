@@ -14,6 +14,7 @@ public class UserModel {
 		try {
 			//Dao接続//
 			userDao.connect();
+			System.out.println("Dao前の処理");
 			userInfo = userDao.getUser(mail,password);
 			//全ての例外//
 		} catch(Exception e) {

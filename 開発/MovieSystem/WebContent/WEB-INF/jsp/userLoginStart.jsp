@@ -43,7 +43,7 @@
 		</form>
 		<div class="form-footer">
 			<p>
-				<a href="adduser">新規会員登録</a>
+				<a href="addUser">新規会員登録</a>
 			</p>
 		</div>
 	</div>

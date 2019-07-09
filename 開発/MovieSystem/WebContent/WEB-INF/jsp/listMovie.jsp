@@ -14,7 +14,6 @@
 	<%
 		List<MovieListBeans> list = (List<MovieListBeans>) request.getAttribute("list");
 		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
-		String loginFlg = (String)request.getAttribute("loginFlg");
 	%>
 
 			<form class="cmxform" action="listMovie" method="GET">
@@ -22,12 +21,12 @@
 			<legend><jsp:include page="./header/header.jsp" /></legend>
 			<a href="mypage" class="my">マイページ</a>
 
-			//ログインされてないとき//
-			<%if((loginFlg == null) || (loginFlg.equals("1"))){ %>
-				<a href="userLoginStart" class="userLoginStart">ログイン</a>
-			//ログインされているとき//
+			//ログインされているとき(userInfoで判定する)//
+			<%if(userInfo != null){ %>
+			<a href="logout" class="listMovie">ログアウト</a>
+			//ログインされていないとき//
 			<%} else {%>
-				<a href="logout" class="listMovie">ログアウト</a>
+			<a href="userLoginStart" class="userLoginStart">ログイン</a>
 			<%}%>
 				<input class="search" type="text" name="search"
 				placeholder="キーワードを入力"><input class="btn" type="submit"
