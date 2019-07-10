@@ -45,7 +45,7 @@ public class LoginCheckFilter implements Filter{
 		//////////////////////////////////////
 		//loginページ以外の場合は、ログインチェックを行う
 		if("/login".equals(servletPath) != true && "/auth".equals(servletPath) != true&&"/listview".equals(servletPath)!=true&& "/searchmovie".equals(servletPath) != true&&"/loginAdmin".equals(servletPath)!=true&&"/authAdmin".equals(servletPath)!=true
-				&&"/top".equals(servletPath) != true){
+				&&"/top".equals(servletPath) != true&& "/ditailmovie01".equals(servletPath) != true&& "/ditailmovie03".equals(servletPath) != true){
 			///////////////////////////////
 			//ログインチェックを行う（セッションからログイン情報を取得してnullでなければOK)
 

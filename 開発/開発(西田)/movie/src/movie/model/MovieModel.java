@@ -1,5 +1,6 @@
 package movie.model;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +35,11 @@ public class MovieModel {
       	 }
       	 return movie;
        }
+
+    public void registAdminMovie(String movieName,String Genre,String movieCast,String movieSummary,int adminId,Date movieStartDate,Date movieEndDate) {
+
+    }
+
+
 
 }

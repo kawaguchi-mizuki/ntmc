@@ -1,0 +1,7 @@
+tomcatDir=C:/Users/まなみ/Downloads/pleiades-4.7.2-java-win-64bit-jre_20171225/pleiades/tomcat/8
+eclipse.preferences.version=1
+fixTomcatHomeBug=fixed
+contextsDir=C:/Users/まなみ/Downloads/pleiades-4.7.2-java-win-64bit-jre_20171225/pleiades/tomcat/8/conf/Catalina/localhost
+tomcatVersion=tomcatV8
+computeSourcePath=true
+tomcatConfigFile=C:/Users/まなみ/Downloads/pleiades-4.7.2-java-win-64bit-jre_20171225/pleiades/tomcat/8/conf/server.xml

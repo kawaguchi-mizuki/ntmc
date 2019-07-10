@@ -19,8 +19,11 @@ public class MovieDao extends DaoBase {
 		  ResultSet rs = null;
 
 		  try {
-			  stmt = con.prepareStatement("SELECT * from movie left outer join appoint on movie.movie_id=appoint.appoint_movie_id left outer join movie_time on appoint.appoint_movie_time=movie_time.movie_time_id where date_add(appoint_date,interval 0 day)=curdate()");
-			  rs= stmt.executeQuery();
+			  stmt = con.prepareStatement("SELECT * from movie  inner join movie_list on movie.movie_id=movie_list.movie_id inner join "
+			  		+ "appoint on movie_list.movie_list_id=appoint.appoint_movie_list_id inner join movie_time on movie_list.movie_time_id=movie_time.movie_time_id"
+			  		+ " where date_add(appoint_date,interval 0 day)>=curdate()");
+			  rs = stmt.executeQuery();
+
 			  while(rs.next()) {
 				  MovieListBeans beans = new MovieListBeans();
 
@@ -28,6 +31,7 @@ public class MovieDao extends DaoBase {
 					beans.setAppointdate(rs.getDate("appoint_date"));
 					beans.setStarttime(rs.getTime("movie_start_time"));
 					beans.setFinishtime(rs.getTime("movie_finish_time"));
+					beans.setMovieId(rs.getString("movie_id"));
 
 					list.add(beans);
 
@@ -58,15 +62,14 @@ public class MovieDao extends DaoBase {
 	   	   ResultSet rs = null;
 
 	   	 try{
-	   		 stmt = con.prepareStatement("SELECT * FROM movie inner join cast on movie.movie_cast_id=cast.cast_id inner join genre on movie_genre_id=genre.genre_id where movie.movie_name like ?");
+	   		 stmt = con.prepareStatement("SELECT * FROM movie  where movie.movie_name like ?");
 	   		 stmt.setString(1,"%"+searchmovie+"%");
 	   		 rs = stmt.executeQuery();
 
 	   	 while(rs.next()) {
 	   		 MovieListBeans searchbeans = new MovieListBeans();
 	   		 searchbeans.setMovieName(rs.getString("movie_name"));
-	   		 searchbeans.setMovieGenre(rs.getString("genre_name"));
-	   		 searchbeans.setMovieCast(rs.getString("cast_name"));
+
 	   		 movie.add(searchbeans);
 
 

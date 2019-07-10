@@ -97,7 +97,25 @@ public class UserDao extends DaoBase{
   	   	 return AdminInfo;
 
   	    }
+       public void createUser(String mail,String name,String sex, String
+
+    			birthday,String password) {
+
+
+    		if( con == null) {
+
+
+    			return;
+
+    	}
+
+
+
+    		PreparedStatement stmt = null;
+
        }
+}
+
 
 
 
