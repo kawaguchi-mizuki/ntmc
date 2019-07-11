@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-package model;
-
-public class MovieModel {
-	public void appointMovie(UserInfoBeans.getUserId) {
-		
-	}
-}
-=======
 package movie.model;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -29,7 +20,6 @@ public class MovieModel {
 		appointBeans.setUserId(userId);
 		appointBeans.setMovieId(movieId);
 		appointBeans.setMovieFee(movieFee);
-		//		appointBeans.setMovieDate(movieDate);
 		appointBeans.setMovieTime(movieTime);
 		appointBeans.setMovieSeat(movieSeat);
 		//	appointBeans.setMovieTheater(movieTheater);
@@ -54,26 +44,27 @@ public class MovieModel {
 	//映画予約確認のModel(listを返す)//
 	public List<AppointBeans> getList(int userId) {
 		List<AppointBeans> list = new ArrayList<>();
-		//		MovieDao movieDao = new MovieDao();
+		AppointDao appointDao = new AppointDao();
 		try {
-			//		movieDao.connect();
-			//		movieDao.getList(userId);
+			appointDao.connect();
+			appointDao.getList(userId);
 			//catchがExceptionの理由：DaoBaseが投げようとしている例外がException(全ての例外)のため//
 		} catch(Exception e) {
 			//エラーを出力画面に表示//
 			e.printStackTrace();
 		} finally {
 			//接続を切る//
-			//		if(movieDao != null) {
-			//			movieDao.close();
+			if(appointDao != null) {
+				appointDao.close();
+			}
+			//	}
+			return list;
 		}
-		//	}
-		return list;
 	}
 
 
 	//映画一覧を表示
-	public List<MovieListBeans> getMovieList() {
+	public List<MovieListBeans> getMovieList(){
 		List<MovieListBeans> list = new ArrayList<MovieListBeans>();
 		MovieDao moviedao = new MovieDao();
 		try {
@@ -87,5 +78,21 @@ public class MovieModel {
 		return list;
 	}
 
+
+	//映画検索
+	public List<MovieListBeans> searchMovie(String searchmovie) {
+		// TODO 自動生成されたメソッド・スタブ
+		List<MovieListBeans> movie = new ArrayList<MovieListBeans>();
+		MovieDao  moviesearchdao = new MovieDao();
+		try {
+			moviesearchdao.connect();
+			movie = moviesearchdao.searchMovie(searchmovie);
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			moviesearchdao.close();
+		}
+		return movie;
+	}
+
 }
->>>>>>> master

@@ -22,7 +22,7 @@
 			<th><a href="updateuserstart" class="btn-square">会員変更</a></th>
 		</tr>
 		<tr>
-			<th><a href="appointcheck" class="btn-square">予約確認</a></th>
+			<th><a href="knownAppoint" class="btn-square">予約確認</a></th>
 			<th><a href="" class="btn-square">お知らせ</a></th>
 		</tr>
 	</table>

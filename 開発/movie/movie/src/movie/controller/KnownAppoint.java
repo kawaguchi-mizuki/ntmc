@@ -25,7 +25,7 @@ public class KnownAppoint extends HttpServlet {
 
 		//セッション取得//
 		HttpSession session = request.getSession();
-		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("");
+		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("userInfo");
 		List<AppointBeans> list = new ArrayList<AppointBeans>();
 		MovieModel movieModel = new MovieModel();
 

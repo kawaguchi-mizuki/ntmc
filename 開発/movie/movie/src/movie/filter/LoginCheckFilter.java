@@ -24,7 +24,7 @@ public class LoginCheckFilter implements Filter {
 	//チェック除外画面
 	private String excludeDispList[] =
 		{
-				"/auth","/login","/user","/logout","/adduser","/addusercomp","/movieview"
+				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview"
 		};
 	private String excludeExtList[] =
 		{
@@ -60,20 +60,21 @@ public class LoginCheckFilter implements Filter {
 		}
 
 
-		//ログインセッションを取得し、存在しない場合は、ログイン画面に飛ばす
+		//ログインセッションを取得し、存在しない場合は、一覧画面に飛ばす
 		HttpSession session = ((HttpServletRequest)request).getSession(false);
 
 		if( session == null ){
-			//セッションがない場合はログイン画面へ
-			((HttpServletResponse)response).sendRedirect("listmovie");
+		//セッションがない場合は一覧画面へ
+			System.out.println("err");
+			((HttpServletResponse)response).sendRedirect("listview?loginflg=1");
 			return;
 		}
 		UserInfoBeans userInfo =
 				(UserInfoBeans)session.getAttribute("userInfo");
 
 		if( userInfo == null ){
-			//ログイン画面へ転送
-			((HttpServletResponse)response).sendRedirect("login");
+			//一覧画面へ転送
+			((HttpServletResponse)response).sendRedirect("listview?loginflg=1");
 		}else{
 			chain.doFilter(request, response);
 		}
