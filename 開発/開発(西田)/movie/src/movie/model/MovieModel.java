@@ -8,12 +8,12 @@ import movie.beans.MovieListBeans;
 import movie.dao.MovieDao;
 
 public class MovieModel {
-    public List<MovieListBeans> getMovieList(){
+    public List<MovieListBeans> getMovieView(){
     	List<MovieListBeans> list = new ArrayList<MovieListBeans>();
     	MovieDao moviedao = new MovieDao();
     	try {
    		 moviedao.connect();
-   		 list = moviedao.getMovieList();
+   		 list = moviedao.getMovieView();
    	 }catch(Exception e) {
    		 e.printStackTrace();
    	 } finally {

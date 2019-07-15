@@ -12,7 +12,7 @@ public class MovieListBeans implements Serializable {
       private String movieSummary;
       private String movieSeat;
       private int adminId;
-      private Date appointdate;
+      private Date movieListdate;
       private Date movieStartDate;
       private Date movieFinishDate;
       private Time starttime;
@@ -61,11 +61,25 @@ public class MovieListBeans implements Serializable {
 	public void setAdminId(int adminId) {
 		this.adminId = adminId;
 	}
-	public Date getAppointdate() {
-		return appointdate;
+
+	public Date getMovieListdate() {
+		return movieListdate;
 	}
-	public void setAppointdate(Date appointdate) {
-		this.appointdate = appointdate;
+	public void setMovieListdate(Date movieListdate) {
+		this.movieListdate = movieListdate;
+	}
+
+	public Date getMovieStartDate() {
+		return movieStartDate;
+	}
+	public void setMovieStartDate(Date movieStartDate) {
+		this.movieStartDate = movieStartDate;
+	}
+	public Date getMovieFinishDate() {
+		return movieFinishDate;
+	}
+	public void setMovieFinishDate(Date movieFinishDate) {
+		this.movieFinishDate = movieFinishDate;
 	}
 	public Time getStarttime() {
 		return starttime;

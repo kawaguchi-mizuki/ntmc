@@ -10,7 +10,7 @@ import movie.beans.MovieListBeans;
 
 public class MovieDao extends DaoBase {
 
-	public List<MovieListBeans>getMovieList(){
+	public List<MovieListBeans>getMovieView(){
 		if(con==null) {
 			  return null;
 		  }
@@ -20,15 +20,15 @@ public class MovieDao extends DaoBase {
 
 		  try {
 			  stmt = con.prepareStatement("SELECT * from movie  inner join movie_list on movie.movie_id=movie_list.movie_id inner join "
-			  		+ "appoint on movie_list.movie_list_id=appoint.appoint_movie_list_id inner join movie_time on movie_list.movie_time_id=movie_time.movie_time_id"
-			  		+ " where date_add(appoint_date,interval 0 day)>=curdate()");
+			  		+ " movie_time on movie_list.movie_time_id=movie_time.movie_time_id"
+			  		+ " where movie_list_date>=curdate() and movie_list_date>=movie_start and movie_list_date<=movie_finish");
 			  rs = stmt.executeQuery();
 
 			  while(rs.next()) {
 				  MovieListBeans beans = new MovieListBeans();
 
 				    beans.setMovieName(rs.getString("movie_name"));
-					beans.setAppointdate(rs.getDate("appoint_date"));
+					beans.setMovieListdate(rs.getDate("movie_list_date"));
 					beans.setStarttime(rs.getTime("movie_start_time"));
 					beans.setFinishtime(rs.getTime("movie_finish_time"));
 					beans.setMovieId(rs.getString("movie_id"));
