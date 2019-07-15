@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,14 +17,14 @@ import movie.beans.UserInfoBeans;
 
 
 
-//@WebFilter("/*")
+@WebFilter("/*")
 public class LoginCheckFilter implements Filter {
 
 
 	//チェック除外画面
 	private String excludeDispList[] =
 		{
-				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview","/mypage"
+				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview","/searchmovie"
 		};
 	private String excludeExtList[] =
 		{
@@ -43,12 +44,12 @@ public class LoginCheckFilter implements Filter {
 		// TODO 自動生成されたメソッド・スタブ
 		//リクエストのサーブレットパスを取得
 		String servletPath = ((HttpServletRequest)request).getServletPath();
-
 		//js,cs,png,gif,ico,jpgは除外
 		if( Arrays.asList(excludeExtList).contains(getExt(servletPath))){
 			chain.doFilter(request, response);
 			return;
 		}
+
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html); charset=UTF-8");
 
@@ -59,20 +60,21 @@ public class LoginCheckFilter implements Filter {
 		}
 
 
-		//ログインセッションを取得し、存在しない場合は、ログイン画面に飛ばす
+		//ログインセッションを取得し、存在しない場合は、一覧画面に飛ばす
 		HttpSession session = ((HttpServletRequest)request).getSession(false);
 
 		if( session == null ){
-			//セッションがない場合はログイン画面へ
-			((HttpServletResponse)response).sendRedirect("login");
+		//セッションがない場合は一覧画面へ
+			System.out.println("err");
+			((HttpServletResponse)response).sendRedirect("listview?loginflg=1");
 			return;
 		}
 		UserInfoBeans userInfo =
 				(UserInfoBeans)session.getAttribute("userInfo");
 
 		if( userInfo == null ){
-			//ログイン画面へ転送
-			((HttpServletResponse)response).sendRedirect("login");
+			//一覧画面へ転送
+			((HttpServletResponse)response).sendRedirect("listview?loginflg=1");
 		}else{
 			chain.doFilter(request, response);
 		}

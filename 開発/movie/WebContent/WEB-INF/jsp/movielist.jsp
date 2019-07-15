@@ -1,45 +1,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page import="movie.beans.UserInfoBeans" %>
-    <%@page import="movie.beans.MovieListBeans" %>
-    <%@ page import="java.util.List" %>
-    <link href="css/list.css" rel="stylesheet" type="text/css">
+<%@page import="movie.beans.UserInfoBeans"%>
+<%@page import="movie.beans.MovieListBeans"%>
+<%@ page import="java.util.List"%>
+<link href="css/list.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="css/list.css" rel="stylesheet" type="text/css">
 </head>
-<body class="list">
+<body>
 	<%
 		List<MovieListBeans> list = (List<MovieListBeans>) request.getAttribute("list");
-		UserInfoBeans login = (UserInfoBeans) session.getAttribute("userInfo");
+		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
+		String loginflg = request.getParameter("loginflg");
+
 	%>
-	<jsp:include page="./header/header.jsp" />
-	<h1>映画一覧</h1>
-	<input type="text" name="search">
-	<input type="button" value="検索">
+
+	<form class="cmxform" action="searchmovie" method="GET">
+		<fieldset>
+			<legend><jsp:include page="./header/header.jsp" /></legend>
+			<a href="mypage" class="my">マイページ</a>
+
+
+			<%if(userInfo != null){ %>
+			<a href="logout" class="login">ログアウト</a>
+
+
+			<%} else {%>
+			<a href="login" class="login">ログイン</a>
+			<%}%>
+
+			<input class="search" type="text" name="search"
+				placeholder="キーワードを入力"><input class="btn" type="submit"
+				value="検索">
+		</fieldset>
+	</form>
 	<table border="3">
 		<tr>
 			<th>年月日</th>
-			<th>時間</th>
+			<th>開始時間</th>
+			<th>終了時間</th>
 			<th>タイトル</th>
 		</tr>
+		<%for(MovieListBeans movielist:list){ %>
+
 		<tr>
-			<td></td>
-			<td>10:00~12:30</td>
-			<td><a href="../映画詳細画面/user_detail.html"></a></td>
+			<td class="data"><%=movielist.getMovieListdate()%></td>
+			<td class="data"><%=movielist.getStarttime() %></td>
+			<td class="data"><%=movielist.getFinishtime() %></td>
+			<td class="data"><a href="ditail"><%=movielist.getMovieName() %></a></td>
 		</tr>
-		<tr>
-			<td>2019/04/26</td>
-			<td>13:30~16:00</td>
-			<td><a href="../映画詳細画面/user_detail2.html">ギターはもう聞こえない</a></td>
-		</tr>
-		<tr>
-			<td>2019/04/26</td>
-			<td>17:00~19:30</td>
-			<td><a href="../映画詳細画面/user_detail3.html">擬似恋愛 ～岩元物語～</a></td>
-		</tr>
+		<%} %>
 	</table>
+
+	<%
+		if (loginflg != null) {
+			if (loginflg.equals("1")) {
+	%>
+	<script>
+		alert('ログインしてください');
+	</script>
+	<%
+		}
+	%>
+	<%
+		}
+	%>
+
 </body>
 </html>

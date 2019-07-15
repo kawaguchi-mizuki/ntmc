@@ -1,20 +1,21 @@
+@charset "UTF-8";
 body{
 	background-image:url("../img/background.jpg");
 	background-size:1800px 700px ;
 	background-weight:700px;
 
 }
+
 form.cmxform {
    margin: 3em auto;
   padding: 0 1em;
-  max-width: 370px;
+  max-width: 800px;
     font-size:11px;
     text-align: center;
-    color:white;
 
 }
 form.cmxform fieldset {
-    width:370px;
+    width:800px;
     border:0;
     border-top:1px solid #c9dca6;
     background:url(/content/img/css/cmxform-fieldset.gif) left bottom repeat-x;
@@ -24,7 +25,6 @@ form.cmxform legend {
     font-weight:bold;
     font-size:30px;
     color:white;
-
 }
 form.cmxform em {
     color:#f00;
@@ -39,16 +39,6 @@ form.cmxform label {
     width:120px;
     font-weight:bold;
     font-size:13px;
-}
-form.cmxform fieldset ol {
-    margin:0;
-    padding:0;
-}
-form.cmxform fieldset li {
-    list-style:none;
-    clear:both;
-    margin:0; padding:5px 5px 7px 7px;
-    background:url(/content/img/css/cmxform-divider.gif) left bottom repeat-x;
 }
 form.cmxform fieldset fieldset {
     border:none;
@@ -101,12 +91,20 @@ form.cmxform .sr {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-  border-bottom: none;
+  border-bottom: none;s
 }
-.err{
- color:red;
- font-weight:bold;
- font-size:15px;
+table{
+	margin: 3em auto;
 
 }
+table tr{
+	height:50px;
 
+}
+.title{
+		 background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+		  width:800px;
+}
+.data{
+	text-align: center;
+}

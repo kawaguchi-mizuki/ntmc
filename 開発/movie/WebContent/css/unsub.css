@@ -4,13 +4,13 @@ body{
 	background-weight:700px;
 
 }
+
 form.cmxform {
    margin: 3em auto;
   padding: 0 1em;
   max-width: 370px;
     font-size:11px;
     text-align: center;
-    color:white;
 
 }
 form.cmxform fieldset {
@@ -24,7 +24,6 @@ form.cmxform legend {
     font-weight:bold;
     font-size:30px;
     color:white;
-
 }
 form.cmxform em {
     color:#f00;
@@ -39,16 +38,6 @@ form.cmxform label {
     width:120px;
     font-weight:bold;
     font-size:13px;
-}
-form.cmxform fieldset ol {
-    margin:0;
-    padding:0;
-}
-form.cmxform fieldset li {
-    list-style:none;
-    clear:both;
-    margin:0; padding:5px 5px 7px 7px;
-    background:url(/content/img/css/cmxform-divider.gif) left bottom repeat-x;
 }
 form.cmxform fieldset fieldset {
     border:none;
@@ -103,10 +92,13 @@ form.cmxform .sr {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
   border-bottom: none;
 }
-.err{
- color:red;
- font-weight:bold;
- font-size:15px;
-
+h1{
+	margin-top:20px;
+	color:white;
 }
-
+.messe{
+	color:red;
+	margin-top:30px;
+	font-size:15px;
+	margin-bottom:30px;
+}

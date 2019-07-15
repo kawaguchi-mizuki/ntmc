@@ -12,20 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import movie.beans.MovieListBeans;
 import movie.model.MovieModel;
+@WebServlet("/searchmovie")
+public class SearchMovie extends HttpServlet {
 
-@WebServlet("/listview")
-public class ListMovie extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String searchmovie = request.getParameter("search");
 
-		MovieModel movieModel = new MovieModel();
-		List<MovieListBeans> list = movieModel.getMovieView();
+		MovieModel moviemodel = new MovieModel();
+		List<MovieListBeans> movie = moviemodel.searchMovie(searchmovie);
+		request.setAttribute("movie", movie);
 
-		request.setAttribute("list", list);
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/movielist.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/listmovie.jsp");
 		dispatcher.forward(request, response);
+
+
 	}
+
 }

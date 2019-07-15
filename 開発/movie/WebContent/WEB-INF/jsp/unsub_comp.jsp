@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>会員登録完了</title>
+<title>退会完了</title>
 <link href="css/unsub_comp.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -12,9 +12,9 @@
 		<fieldset>
 			<legend></legend>
 
-			<h1>登録完了しました！</h1>
+			<h1>退会完了しました！</h1>
 
-			<input type="submit" value="ログイン画面へ" class="send" />
+			<input type="submit" value="一覧へ戻る" class="send" />
 
 		</fieldset>
 

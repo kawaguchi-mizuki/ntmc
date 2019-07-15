@@ -10,9 +10,6 @@
 <body>
 	<%
 		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
-		String upmail = userInfo.getMail().replace("/","");
-		String upname = userInfo.getName().replace("/","");
-		String uppass = userInfo.getPassword().replace("/","");
 	%>
 
 	<form class="cmxform" action="updateuser" method="POST">
@@ -20,10 +17,10 @@
 			<legend>会員情報更新</legend>
 			<ol>
 				<li><label for="address">メールアドレス<em>*</em></label>
-				 <input id="mail" name="mail" required="required" value=<%= upmail %>></li>
+				 <input type="email" id="mail" name="mail" required="required" value=<%=userInfo.getMail() %>></li>
 
 				<li><label for="name">名前<em>*</em></label>
-				<input id="name" name="name"required="required" value=<%= upname %>></li>
+				<input id="name" name="name"required="required" value=<%= userInfo.getName() %>></li>
 
 				<li><label for="sex">性別<em>*</em></label>
 				<%= userInfo.getSex() %>
@@ -34,7 +31,7 @@
 				</li>
 
 				<li><label for="password">パスワード<em>*</em></label>
-				 <input id="password" name="password" required="required" value=<%= uppass %>></li>
+				 <input id="password" name="password" required="required" value=<%=userInfo.getPassword() %>></li>
 
 				<li><label for="postcode">パスワード再入力<em>*</em></label>
 				<input  id="r-password" name="r-password" required="required"/></li>
