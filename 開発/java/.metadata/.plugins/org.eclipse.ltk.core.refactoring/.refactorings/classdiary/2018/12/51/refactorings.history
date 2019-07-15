@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="&apos;diary.sanitizing.Sanitizing.scriptStop(...)&apos; のローカル変数の名前を &apos;goodPoint&apos; から &apos;text&apos; に変更します&#x0A;- 元のプロジェクト: &apos;classdiary&apos;&#x0A;- オリジナル要素: &apos;diary.sanitizing.Sanitizing.scriptStop(String).goodPoint&apos;&#x0A;- 名前変更済み要素: &apos;goodPoint&apos;&#x0A;- リファクタリングされた要素の参照を更新" description="ローカル変数名 &apos;goodPoint&apos; の変更" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;diary.sanitizing{Sanitizing.java[Sanitizing~scriptStop~QString;@goodPoint!86!101!93!101!QString;!0!true" name="text" references="true" stamp="1545015473036" version="1.0"/>
+</session>

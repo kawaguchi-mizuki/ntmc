@@ -1,7 +1,0 @@
-package movie.controller;
-
-import javax.servlet.http.HttpServlet;
-
-public class KnownAppoint extends HttpServlet {
-
-}

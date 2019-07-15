@@ -1,0 +1,117 @@
+@charset "UTF-8";
+.background{
+	background-image : url("../img/sakuramoti2.jpg");
+	background-size : 100% auto;
+}
+.backgroundList{
+	background-image : url("../img/sakuramoti2.jpg");
+	background-size : 5% auto;
+}
+.errormessage{
+	color : #ff0000;
+	font-size : 25px;
+	}
+.red{
+	bg-color : red;
+}
+.blue{
+	background-color : blue;
+}
+.green{
+	color : green;
+}
+.input{
+	width : 85%;
+}
+.loginInfo{
+	width : 25%;
+	font-size : 20px;
+}
+.logo{
+	width : 100px;
+	height : 70px;
+}
+.headername{
+	font-size : 20px;
+	padding-left : 60px;
+}
+.check{
+	color : deepskyblue;
+	text-align : center;
+	font-size : 30px;
+}
+ul{
+	list-style-type : none;
+}
+#title{
+	text-align : center;
+	color : #2fff31;
+}
+#headerLogo{
+	display : inline;
+	margin-right : 100px;
+}
+#headerPlofile{
+	display : inline;
+	margin-left : 350px;
+}
+#headerLogout{
+	display : inline;
+	margin-left : 300px;
+}
+#goodPoint{
+	margin-top : 30px;
+	background-color : #ff5b5f;
+	width : 100%;
+	font-size : 25px;
+}
+#badPoint{
+	margin-top : 30px;
+	background-color : #ffc74c;
+	width : 100%;
+	font-size : 25px;
+}
+
+#studentComment{
+	margin-top : 30px;
+	background-color : #62ff64;
+	width : 100%;
+	font-size : 25px;
+}
+#login{
+	color : deepskyblue;
+	text-align : center;
+}
+#btn{
+	background-color : #e774ff;
+}
+#top{
+	color : deepskyblue;
+	text-align : center;
+}
+#registration{
+	color : deepskyblue;
+	text-align : center;
+}
+#registrationbutton{
+	margin-top : 40px;
+}
+#check{
+	font-size : 25px;
+	text-align : center;
+}
+#yes{
+	background-color : #fff97d;
+}
+#no{
+	background-color : #7d9bff;
+}
+#checkComp{
+	font-size : 30px;
+	text-align : center;
+
+}
+#list{
+	width : 100%;
+	margin-bottom : 20px;
+}
