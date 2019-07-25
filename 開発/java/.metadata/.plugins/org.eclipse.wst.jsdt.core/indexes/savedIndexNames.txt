@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/Volumes/ZITURYOKU/Webアプリケーション/java/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1191804581.index
-1691666949.index
-2185142522.index
-1923379298.index
-3696396920.index
-3846834237.index
