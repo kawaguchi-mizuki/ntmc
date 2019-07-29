@@ -47,6 +47,9 @@
 			<p>
 				<a href="adduser">新規会員登録</a>
 			</p>
+			<p>
+				<a href="listview">映画一覧へ</a>
+			</p>
 		</div>
 	</div>
 

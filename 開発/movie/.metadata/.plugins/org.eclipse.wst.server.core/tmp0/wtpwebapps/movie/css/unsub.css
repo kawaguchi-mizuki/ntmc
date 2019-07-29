@@ -1,3 +1,9 @@
+body{
+	background-image:url("../img/background.jpg");
+	background-size:1800px 700px ;
+	background-weight:700px;
+
+}
 
 form.cmxform {
    margin: 3em auto;
@@ -17,6 +23,7 @@ form.cmxform legend {
     padding:1em 2px 0 2px;
     font-weight:bold;
     font-size:30px;
+    color:white;
 }
 form.cmxform em {
     color:#f00;
@@ -87,6 +94,7 @@ form.cmxform .sr {
 }
 h1{
 	margin-top:20px;
+	color:white;
 }
 .messe{
 	color:red;

@@ -1,0 +1,5 @@
+package movieadmin.model.dao;
+
+public class AdminMovieDao {
+
+}

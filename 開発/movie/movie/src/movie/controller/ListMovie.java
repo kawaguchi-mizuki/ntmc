@@ -19,9 +19,9 @@ public class ListMovie extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		MovieModel movieModel = new MovieModel();
-		List<MovieListBeans> list = movieModel.getMovieList();
+		List<MovieListBeans> list = movieModel.getMovieView();
 
 		request.setAttribute("list", list);
 

@@ -25,7 +25,7 @@ public class SearchMovie extends HttpServlet {
 		List<MovieListBeans> movie = moviemodel.searchMovie(searchmovie);
 		request.setAttribute("movie", movie);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/searchmovie.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/listmovie.jsp");
 		dispatcher.forward(request, response);
 
 

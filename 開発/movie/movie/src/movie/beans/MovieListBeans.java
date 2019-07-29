@@ -5,7 +5,8 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class MovieListBeans implements Serializable {
-	private String movieId;
+	private int appointId;
+	private int movieId;
 	private String movieName;
 	private String movieGenre;
 	private String movieCast;
@@ -17,12 +18,20 @@ public class MovieListBeans implements Serializable {
 	private Date movieFinishDate;
 	private Time starttime;
 	private Time finishtime;
-	public String getMovieId() {
+	private Date movieListdate;
+	public int getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(String movieId) {
+	public int getAppointId() {
+		return appointId;
+	}
+	public void setAppointId(int appointId) {
+		this.appointId = appointId;
+	}
+	public void setMovieId(int movieId) {
 		this.movieId = movieId;
 	}
+
 	public String getMovieName() {
 		return movieName;
 	}
@@ -89,5 +98,16 @@ public class MovieListBeans implements Serializable {
 	public void setFinishtime(Time finishtime) {
 		this.finishtime = finishtime;
 	}
+
+	public Date getMovieListdate() {
+		return movieListdate;
+	}
+
+	public void setMovieListdate(Date movieListdate) {
+		this.movieListdate = movieListdate;
+	}
+
+
+
 
 }

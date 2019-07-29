@@ -1,0 +1,38 @@
+package movieadmin.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import movieadmin.model.AdminMovieModel;
+@WebServlet("/addmovie")
+public class AddMovie extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
+		// TODO 自動生成されたメソッド・スタブ
+
+		String movie = request.getParameter("movie");
+		String genre = request.getParameter("genre");
+		String cast = request.getParameter("cast");
+		String view = request.getParameter("view");
+		String movie_start = request.getParameter("movie_start");
+		String movie_finish = request.getParameter("movie_finish");
+
+
+		System.out.println(movie);
+
+
+		AdminMovieModel movieModel = new AdminMovieModel();
+
+		movieModel.addmovie(movie,genre,cast,view,movie_start,movie_finish);
+
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/add_movie_comp.jsp");
+		dispatcher.forward(request, respons);
+	}
+}

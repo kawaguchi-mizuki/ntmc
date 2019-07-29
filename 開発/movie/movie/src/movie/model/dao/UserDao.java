@@ -135,7 +135,7 @@ public class UserDao extends DaoBase {
 
 	}
 
-	//会員更新 反映
+	//会員更新 初期値 反映
 
 	public UserInfoBeans getFromUser(int id) {
 		// TODO 自動生成されたメソッド・スタブ

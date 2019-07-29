@@ -1,0 +1,5 @@
+package movieadmin.model;
+
+public class AdminMovieModel {
+
+}

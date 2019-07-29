@@ -15,7 +15,7 @@ import movie.model.UserModel;
 public class UpdateUser extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
 		// TOD 自動生成されたメソッド・スタブ
 
 
@@ -30,7 +30,7 @@ public class UpdateUser extends HttpServlet {
 
 		//パスワードの入力値が再入力の値と違うならエラーをだす
 		if(!(password.equals(r_password))) {
-			respons.sendRedirect("updateuser?errflg=1");
+			respons.sendRedirect("updateuserstart?errflg=1");
 			return;
 		}
 

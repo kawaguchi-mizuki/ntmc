@@ -48,13 +48,15 @@
 		<%for(MovieListBeans movielist:list){ %>
 
 		<tr>
-			<td><%=movielist.getAppointdate()%></td>
-			<td><%=movielist.getStarttime() %></td>
-			<td><%=movielist.getFinishtime() %></td>
-			<td><a href="ditail<%=movielist.getMovieId()%>"><%=movielist.getMovieName() %></a></td>
+			<td class="data"><%=movielist.getMovieListdate()%></td>
+			<td class="data"><%=movielist.getStarttime() %></td>
+			<td class="data"><%=movielist.getFinishtime() %></td>
+			<td class="data"><a href="ditail"><%=movielist.getMovieName() %></a></td>
 		</tr>
+		
 		<%} %>
 	</table>
+
 	<%
 		if (loginflg != null) {
 			if (loginflg.equals("1")) {

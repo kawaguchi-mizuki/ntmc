@@ -24,7 +24,7 @@ public class LoginCheckFilter implements Filter {
 	//チェック除外画面
 	private String excludeDispList[] =
 		{
-				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview"
+				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listview","/searchmovie"
 		};
 	private String excludeExtList[] =
 		{

@@ -22,7 +22,7 @@ public class MovieModel {
 		appointBeans.setMovieFee(movieFee);
 		appointBeans.setMovieTime(movieTime);
 		appointBeans.setMovieSeat(movieSeat);
-		//	appointBeans.setMovieTheater(movieTheater);
+		//  appointBeans.setMovieTheater(movieTheater);
 		//	appointBeans.setMovieScreen(movieScreen);
 
 		AppointDao appointDao = new AppointDao();
@@ -62,8 +62,44 @@ public class MovieModel {
 		}
 	}
 
+	//予約詳細のメソッド//
+	public MovieListBeans getDetail(int movieId) {
+		MovieListBeans movieListBeans = new MovieListBeans();
+		MovieDao movieDao = new MovieDao();
+		try {
+			movieDao.connect();
+			movieDao.getDetail(movieId);
+		} catch(Exception e) {
+			//エラーを出力する//
+			e.printStackTrace();
+		} finally {
+			//接続を切る//
+			if(movieDao != null) {
+				movieDao.close();
+			}
+		}
+		return movieListBeans;
+	}
 
 	//映画一覧を表示
+	public List<MovieListBeans> getMovieView(){
+		List<MovieListBeans> list = new ArrayList<MovieListBeans>();
+		MovieDao moviedao = new MovieDao();
+		try {
+			moviedao.connect();
+			list = moviedao.getMovieView();
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			moviedao.close();
+		}
+		return list;
+	}
+
+
+
+
+	//予約確認を表示
 	public List<MovieListBeans> getMovieList(){
 		List<MovieListBeans> list = new ArrayList<MovieListBeans>();
 		MovieDao moviedao = new MovieDao();
@@ -77,6 +113,7 @@ public class MovieModel {
 		}
 		return list;
 	}
+
 
 
 	//映画検索
@@ -95,4 +132,25 @@ public class MovieModel {
 		return movie;
 	}
 
+	//映画予約キャンセル
+
+	public void deleteMovie(int appointId) {
+
+		MovieDao moviedao = new MovieDao();
+		try{
+			moviedao.connect();
+			moviedao.deleteMovieMeisai(appointId);
+			moviedao.deleteMovie(appointId);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(moviedao!=null) {
+				moviedao.close();
+			}
+		}
+	}
+
 }
+
+

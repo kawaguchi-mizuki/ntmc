@@ -105,5 +105,8 @@ form.cmxform .sr {
 }
 .err{
  color:red;
+ font-weight:bold;
+ font-size:15px;
+
 }
 

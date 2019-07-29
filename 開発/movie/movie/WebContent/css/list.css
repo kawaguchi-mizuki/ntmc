@@ -43,6 +43,7 @@ form.cmxform fieldset fieldset {
 .search{
 	margin-top:70px;
 	margin-right:20px;
+	margin-left:40px;
 	height:30px;/*検索ボックスの高さ*/
 	padding:0 10px;/*テキスト位置調整*/
 	border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/
@@ -105,4 +106,18 @@ form.cmxform fieldset fieldset {
 }
 .login:hover::after {
 	width: 100%;
+}
+
+table{
+	margin: 3em auto;
+	 width:800px;
+	 background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+
+}
+table tr{
+	height:50px;
+
+}
+.data{
+	text-align: center;
 }

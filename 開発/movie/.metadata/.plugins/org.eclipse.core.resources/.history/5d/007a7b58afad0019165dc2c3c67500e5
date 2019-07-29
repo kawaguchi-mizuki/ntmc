@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>映画更新</title>
+<link href="css/add_admin.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form class="cmxform" action="topadmin" method="GET">
+		<fieldset>
+			<legend>映画更新</legend>
+
+			<h1></h1>
+
+			<input type="submit" value="更新" class="send" />
+
+		</fieldset>
+
+</body>
+</html>

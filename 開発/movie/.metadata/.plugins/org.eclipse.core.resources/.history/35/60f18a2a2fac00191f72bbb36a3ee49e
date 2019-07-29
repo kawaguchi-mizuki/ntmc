@@ -1,0 +1,11 @@
+package movieadmin.model.dao;
+
+public class AdminMovieDao extends DaoBase{
+
+	public void InsertMovie(String movie, String genre, String cast, String view, String movie_start,
+			String movie_finish) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}

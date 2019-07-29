@@ -1,0 +1,39 @@
+package movie.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpSession;
+
+import movie.beans.UserInfoBeans;
+import movie.model.UserModel;
+@WebServlet("/canselAppoint")
+public class CancelAppoint extends HttpServlet {
+
+
+
+
+	int id = UserInfoBeans.getId();
+	HttpSession session = request.getSession();
+
+	UserModel userModel = new UserModel();
+
+	String[] selectmovie = request.getParameterValues("check");
+
+
+	for (String selecter : selectmovie) {
+
+		int movielistID = Integer.parseInt(selecter);
+
+		userModel.unsubFromUser(movielistID,id);
+
+    }
+
+
+
+
+
+
+
+	session.invalidate();
+
+}

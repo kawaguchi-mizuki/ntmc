@@ -1,7 +1,6 @@
 package movie.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,32 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import movie.beans.AppointBeans;
+import movie.beans.MovieListBeans;
 import movie.beans.UserInfoBeans;
 import movie.model.MovieModel;
 
 @WebServlet("/knownAppoint")
 public class KnownAppoint extends HttpServlet {
 
-	//Override//
+   @Override
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException,IOException{
 
 		//セッション取得//
 		HttpSession session = request.getSession();
 		UserInfoBeans userInfo = (UserInfoBeans)session.getAttribute("userInfo");
-		List<AppointBeans> list = new ArrayList<AppointBeans>();
+
+
 		MovieModel movieModel = new MovieModel();
+		List<MovieListBeans> list = movieModel.getMovieList();
 
-		try {
-			//movieModelのメソッドを実行する(引数：userInfoBeansにあるuserId)//
-			list = movieModel.getList(userInfo.getId());
-		} catch(Exception e) {
-			//エラーを出力する//
-			e.printStackTrace();
-		}
-
-		//取ってきた予約リストをセット//
 		request.setAttribute("list", list);
 
 		//画面遷移//

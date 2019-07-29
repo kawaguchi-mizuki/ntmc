@@ -1,0 +1,45 @@
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-image: linear-gradient(40deg, #fce043 0%, #fb7ba2 74%);;/*ボタン色*/
+  color:black;
+  border-bottom: solid 4px #627295;
+  border-radius: 13px;
+  margin:15px;
+  font-style: italic;
+  font-size:30px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+table{
+	font-size:25px;
+	margin-top:0px;
+	margin-bottom:100px;
+}
+.btn-square{
+	padding-top:100px;
+	padding-bottom:100px;
+	padding-left:100px;
+	padding-right:100px;
+}
+body{
+	background-image:url("../img/background.jpg");
+	background-size:1800px 700px ;
+	background-weight:700px;
+}
+.Adname{
+	font-size:20px;
+	margin-top:20px;
+	margin-right:10px;
+	margin-bottom:20px;
+	text-align:right;
+}
+.header{
+	border:solid 1px black;
+}
+

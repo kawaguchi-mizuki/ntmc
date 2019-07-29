@@ -1,0 +1,49 @@
+package movieadmin.model.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class AdminMovieDao extends DaoBase{
+
+	public void InsertMovie(String movie, String genre, String cast, String view, String movie_start,
+			String movie_finish) {
+		// TODO 自動生成されたメソッド・スタブ
+
+
+
+		if( con == null) {
+
+			return;
+
+		}
+
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = con.prepareStatement("insert into movie(movie_name,movie_genre_name,movie_cast_name,movie_view,movie_admin_id,movie_start,movie_finish) "
+					+ "value (?,?,?,?,?,?)");
+			stmt.setString(1,movie);
+			stmt.setString(2,genre);
+			stmt.setString(3,cast);
+			stmt.setString(4,view);
+			stmt.setString(5,movie_start);
+			stmt.setString(6,movie_finish);
+			stmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+
+		}finally {
+			if( con!=null) {
+				try {
+					con.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+
+
+	}
+
+}

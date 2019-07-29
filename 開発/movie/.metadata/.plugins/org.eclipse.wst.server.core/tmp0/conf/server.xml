@@ -151,6 +151,8 @@
 
       <Context docBase="C:\Eclipse\pleiades\workspace\movie\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Eclipse\pleiades\workspace\movie\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\movie" path="/movie" reloadable="false" source="org.eclipse.jst.jee.server:movie">
 	<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxIdle="20" maxTotal="100" maxWaitMillis="-1" name="jdbc/MySQL" password="mizuking0" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/movie?serverTimezone=JST" username="root" validationQuery="SELECT 0"/>
+</Context><Context docBase="C:\Eclipse\pleiades\workspace\movie\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\movieadmin" path="/movieadmin" reloadable="false" source="org.eclipse.jst.jee.server:movieadmin">
+	<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxIdle="20" maxTotal="100" maxWaitMillis="-1" name="jdbc/MySQL" password="mizuking0" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/movie?serverTimezone=JST" username="root" validationQuery="SELECT 0"/>
 </Context></Host>
     </Engine>
   </Service>

@@ -1,0 +1,30 @@
+package movieadmin.model;
+
+import movieadmin.model.dao.AdminMovieDao;
+
+public class AdminMovieModel {
+
+	//映画登録処理
+
+	public void addmovie(String movie, String genre, String cast, String view,int adminid, String movie_start,
+			String movie_finish) {
+
+		AdminMovieDao movieDao = new AdminMovieDao();
+
+		try {
+			movieDao.connect();
+			movieDao.InsertMovie(movie,genre,cast,view,adminid,new java.sql.Daate(movie_start.getTime()),
+					new java.sql.Date(movie_finish.getTime()));
+		} catch(Exception e) {
+			//エラーを出力する//
+			e.printStackTrace();
+		} finally {
+			//接続を切る//
+			if(movieDao != null) {
+				movieDao.close();
+			}
+		}
+		return ;
+	}
+
+}

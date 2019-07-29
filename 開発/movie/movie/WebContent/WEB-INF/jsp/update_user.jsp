@@ -12,7 +12,7 @@
 		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
 	%>
 
-	<form class="cmxform" action="updateuser" method="GET">
+	<form class="cmxform" action="updateuser" method="POST">
 		<fieldset>
 			<legend>会員情報更新</legend>
 			<ol>
