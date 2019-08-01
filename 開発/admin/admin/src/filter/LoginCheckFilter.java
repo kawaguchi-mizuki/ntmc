@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.User_Info_Beans;
+import beans.UserInfoBeans;
 
 
 
@@ -24,8 +24,7 @@ public class LoginCheckFilter implements Filter {
 	//チェック除外画面
 	private String excludeDispList[] =
 		{
-				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listMovie",
-				"/searchmovie","/detail","/appoint_seat"
+				"/auth","/login","/user","/logout","/adduser","/addusercomp","/listMovie","/searchmovie","/detail"
 		};
 	private String excludeExtList[] =
 		{
@@ -70,8 +69,8 @@ public class LoginCheckFilter implements Filter {
 			((HttpServletResponse)response).sendRedirect("listMovie");
 			return;
 		}
-		User_Info_Beans userInfo =
-				(User_Info_Beans)session.getAttribute("userInfo");
+		UserInfoBeans userInfo =
+				(UserInfoBeans)session.getAttribute("userInfo");
 
 		if( userInfo == null ){
 			//一覧画面へ転送

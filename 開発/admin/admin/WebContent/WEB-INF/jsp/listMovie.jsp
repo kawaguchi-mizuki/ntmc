@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="beans.User_Info_Beans"%>
-<%@page import="beans.Movie_List_Beans"%>
+<%@page import="beans.UserInfoBeans"%>
+<%@page import="beans.MovieListBeans"%>
 <%@ page import="java.util.List"%>
 <link href="css/list.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
@@ -13,8 +13,8 @@
 </head>
 <body>
 	<%
-		List<Movie_List_Beans> list = (List<Movie_List_Beans>) session.getAttribute("list");
-		User_Info_Beans userInfo = (User_Info_Beans) session.getAttribute("userInfo");
+		List<MovieListBeans> list = (List<MovieListBeans>) session.getAttribute("list");
+		UserInfoBeans userInfo = (UserInfoBeans) session.getAttribute("userInfo");
 		String loginflg = request.getParameter("loginflg");
 	%>
 
@@ -51,7 +51,7 @@
 			<th>タイトル</th>
 		</tr>
 		<%
-			for (Movie_List_Beans movielist : list) {
+			for (MovieListBeans movielist : list) {
 		%>
 
 		<tr>

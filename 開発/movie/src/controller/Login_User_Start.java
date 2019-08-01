@@ -8,14 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/mypage")
-public class Mypage extends HttpServlet {
+@WebServlet("/login")
+public class Login_User_Start extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp");
+		respons.setContentType("text/css");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login_user.jsp");
 		dispatcher.forward(request, respons);
-
 	}
 
 

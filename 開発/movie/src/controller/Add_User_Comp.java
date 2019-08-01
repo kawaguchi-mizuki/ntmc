@@ -8,15 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/mypage")
-public class Mypage extends HttpServlet {
+
+
+@WebServlet("/addusercomp")
+public class Add_User_Comp extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/add_user_comp.jsp");
 		dispatcher.forward(request, respons);
-
 	}
-
-
 }

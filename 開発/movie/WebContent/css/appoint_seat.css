@@ -1,0 +1,98 @@
+input[type=checkbox] {
+display: none;	/* checkboxを非表示にする */
+}
+
+input[type=radio]{
+display: none;/*チェックボックスを非表示にする*/
+}
+
+input[type="checkbox"]:checked + label {
+background: #fd7e00;/* マウス選択時の背景色を指定する */
+color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.label {
+display: block;	/* ブロックレベル要素化する */
+float: left;	/* 要素の左寄せ・回り込を指定する */
+margin: 1px;	/* ラベル外側の余白を指定する */
+width: 10px;	/* ラベルの横幅を指定する */
+height: 20px;	/* ラベルの高さを指定する */
+text-align: center;	/* テキストのセンタリングを指定する */
+line-height: 45px;	/* 行の高さを指定する */
+padding-left: 5px;	/* ラベル内左側の余白を指定する */
+padding-right: 5px;	/* ラベル内右側の余白を指定する */
+cursor: pointer;	/* マウスカーソルの形（リンクカーソル）を指定する */
+color: #b20000;	/* フォントの色を指定 */
+border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
+border-radius: 5px;	/* 角丸を指定する */
+}
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.border_radius {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+
+/*テーブルを囲むcardクラスの情報 */
+
+.card {
+  width: 350px;
+  background: #fff;
+  border-radius: 30px;
+
+  border-style: solid;
+  border-color: black;
+  box-shadow: 0 2px 5px #ccc;
+
+  padding: 30px;
+  padding-left: 70px;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}@charset "UTF-8";
